@@ -3,204 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHIKA · I Know What You Want to Drink</title>
-    <!-- Tailwind + Fonts + Icons -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Quân Đặng · Game Designer</title>
+    <!-- Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; background: #0f0f1a; }
-        .glow-text { text-shadow: 0 0 10px #ff8cff, 0 0 20px #8c8cff; }
-        .neon-border { box-shadow: 0 0 15px rgba(255, 140, 255, 0.6); }
-        .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
-        .card-hover:hover { transform: scale(1.02); box-shadow: 0 20px 30px -10px #ff8cff80; }
-        .gradient-bg { background: linear-gradient(145deg, #1e1e2f, #2a1e3a); }
-        .mask-icon { filter: drop-shadow(0 0 8px #ff66cc); }
-        .timeline-dot { width: 16px; height: 16px; background: #ffaa00; border-radius: 50%; position: absolute; left: -8px; top: 6px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f5f0eb;
+            font-family: 'Inter', sans-serif;
+            color: #2e2821;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        /* Header */
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: #cfa47b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            color: #fff;
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.2);
+        }
+        .intro h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .intro p {
+            font-size: 20px;
+            color: #5f4e3c;
+            max-width: 600px;
+        }
+        /* Section title */
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 60px 0 32px;
+            border-bottom: 3px solid #cfb191;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        /* Game cards */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        .game-card {
+            background: #fffcf8;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 18px 30px -12px rgba(78, 55, 40, 0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eadacb;
+        }
+        .game-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -10px #7a5d44;
+        }
+        .game-cover {
+            height: 200px;
+            background: linear-gradient(145deg, #5e4b3a, #9f7e64);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: rgba(255,255,255,0.2);
+            font-weight: 700;
+        }
+        .game-info {
+            padding: 24px;
+        }
+        .game-title {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .game-tagline {
+            font-size: 15px;
+            color: #8b6f54;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .game-desc {
+            color: #3d332b;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+        .game-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .game-meta span {
+            background: #ede3d9;
+            padding: 4px 12px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            background: #f0e4d8;
+            color: #2e2821;
+            border: 1px solid #cfb8a8;
+        }
+        .btn-primary {
+            background: #5b3f2c;
+            color: white;
+            border: none;
+        }
+        .btn-primary i { color: #f5c9a4; }
+        .btn:hover { transform: scale(1.02); filter: brightness(0.96); }
+        /* Modal (high-level GDD) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            backdrop-filter: blur(5px);
+        }
+        .modal.active { display: flex; }
+        .modal-content {
+            background: #fffcf5;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 48px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 40px 60px rgba(0,0,0,0.5);
+            border: 2px solid #dbbc9b;
+        }
+        .close-modal {
+            position: absolute;
+            top: 24px; right: 30px;
+            font-size: 32px;
+            cursor: pointer;
+            color: #987b63;
+            transition: color 0.2s;
+        }
+        .close-modal:hover { color: #4f3624; }
+        .modal h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-left: 8px solid #b48a65;
+            padding-left: 20px;
+        }
+        .modal-section {
+            margin: 28px 0;
+        }
+        .modal-section h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #5e3f2c;
+        }
+        /* Footer */
+        .footer {
+            margin-top: 100px;
+            text-align: center;
+            color: #75604d;
+            font-size: 14px;
+            border-top: 1px dashed #dac1ae;
+            padding-top: 40px;
+        }
+        .social a {
+            color: #4f3b2c;
+            font-size: 28px;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+        .social a:hover { color: #a5724b; }
     </style>
 </head>
-<body class="text-gray-200">
-
-    <!-- NAV / HEADER -->
-    <header class="max-w-6xl mx-auto px-6 py-12 text-center">
-        <h1 class="text-7xl font-extrabold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 text-transparent bg-clip-text tracking-tight">SHIKA</h1>
-        <p class="text-3xl font-light mt-2 glow-text">✦ I Know What You Want to Drink ✦</p>
-        <div class="flex justify-center gap-4 mt-6 text-sm">
-            <span class="bg-white/10 backdrop-blur px-4 py-2 rounded-full"><i class="fas fa-gamepad mr-2"></i>Narrative Adventure</span>
-            <span class="bg-white/10 backdrop-blur px-4 py-2 rounded-full"><i class="fas fa-mask mr-2"></i>Dark Cozy</span>
-            <span class="bg-white/10 backdrop-blur px-4 py-2 rounded-full"><i class="fas fa-clock mr-2"></i>20–40 phút</span>
-            <span class="bg-white/10 backdrop-blur px-4 py-2 rounded-full"><i class="fas fa-laptop mr-2"></i>PC / Web</span>
-        </div>
-        <p class="max-w-2xl mx-auto mt-8 text-xl italic text-purple-200 border-l-4 border-pink-400 pl-6 text-left">
-            “Bạn là sinh vật ngoài hành tinh sống nhờ cảm xúc tiêu cực. Pha chế đúng để thu hoạch nỗi đau, sai lầm có thể đẩy khách hàng vào bóng tối.”
-        </p>
-    </header>
-
-    <!-- OVERVIEW CARDS (CORE PILLARS) -->
-    <section class="max-w-6xl mx-auto px-6 py-10">
-        <h2 class="text-4xl font-bold mb-8 flex items-center"><i class="fas fa-crown text-yellow-300 mr-4"></i> Core vision pillars</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-indigo-900/30 backdrop-blur p-6 rounded-3xl border border-indigo-500/50 card-hover">
-                <i class="fas fa-heart text-4xl text-pink-400 mb-3"></i>
-                <h3 class="text-2xl font-bold">Emotional first</h3>
-                <p class="text-indigo-200">Mọi thứ — hội thoại, nhạc, màu sắc — đều phục vụ cảm xúc. Không cơ chế nào quan trọng hơn câu chuyện.</p>
-            </div>
-            <div class="bg-purple-900/30 backdrop-blur p-6 rounded-3xl border border-purple-500/50 card-hover">
-                <i class="fas fa-mask text-4xl text-purple-300 mb-3"></i>
-                <h3 class="text-2xl font-bold">Mask as mechanic</h3>
-                <p class="text-purple-200">Mặt nạ rung, nứt, đổi màu – cung cấp tín hiệu cho người chơi. Không đoán mò, tất cả gắn với việc đọc mặt nạ.</p>
-            </div>
-            <div class="bg-pink-900/30 backdrop-blur p-6 rounded-3xl border border-pink-500/50 card-hover">
-                <i class="fas fa-feather text-4xl text-pink-300 mb-3"></i>
-                <h3 class="text-2xl font-bold">Gentle tension</h3>
-                <p class="text-pink-200">Áp lực sinh tồn (đói, bad end) nhưng không hành hạ. Fail phải buồn và day dứt.</p>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="profile">
+            <div class="avatar">👾</div>
+            <div class="intro">
+                <h1>Quân Đặng</h1>
+                <p>Game designer · kể chuyện bằng cơ chế · yêu sự tối giản và cảm xúc “cozy nhưng day dứt”.</p>
             </div>
         </div>
-    </section>
 
-    <!-- CORE LOOP (sơ đồ minh họa) -->
-    <section class="max-w-6xl mx-auto px-6 py-10">
-        <h2 class="text-4xl font-bold mb-8 flex items-center"><i class="fas fa-rotate-right text-green-300 mr-4"></i> Core loop</h2>
-        <div class="gradient-bg p-8 rounded-3xl border border-white/20 relative">
-            <div class="flex flex-wrap justify-center items-center gap-4 text-sm font-mono">
-                <div class="bg-pink-600/80 px-6 py-3 rounded-full shadow-lg">☕ Mở quán</div>
-                <i class="fas fa-arrow-right text-2xl text-pink-300"></i>
-                <div class="bg-purple-600/80 px-6 py-3 rounded-full shadow-lg">🗣️ Trò chuyện</div>
-                <i class="fas fa-arrow-right text-2xl text-purple-300"></i>
-                <div class="bg-indigo-600/80 px-6 py-3 rounded-full shadow-lg">🎭 Đọc mặt nạ</div>
-                <i class="fas fa-arrow-right text-2xl text-indigo-300"></i>
-                <div class="bg-blue-600/80 px-6 py-3 rounded-full shadow-lg">🍹 Pha chế</div>
-                <i class="fas fa-arrow-right text-2xl text-blue-300"></i>
-                <div class="bg-teal-600/80 px-6 py-3 rounded-full shadow-lg">📊 Phản hồi</div>
+        <!-- GAMES SECTION -->
+        <h2 class="section-title">🎮 dự án game</h2>
+        <div class="game-grid" id="game-grid">
+            <!-- Game 1: SHIKA -->
+            <div class="game-card" data-game="shika">
+                <div class="game-cover">🎭</div>
+                <div class="game-info">
+                    <div class="game-title">SHIKA <span style="font-size: 18px; background: #dbb58b; padding: 2px 10px; border-radius: 60px;">2026</span></div>
+                    <div class="game-tagline">I know what you want to drink</div>
+                    <div class="game-desc">Pha chế bằng nỗi đau. Sinh tồn bằng cảm xúc. Bạn là người ngoài hành tinh mắc kẹt, phải đọc vị khách qua lớp mặt nạ cảm xúc.</div>
+                    <div class="game-meta">
+                        <span><i class="fas fa-mask"></i> Narrative</span>
+                        <span><i class="fas fa-heart"></i> Dark cozy</span>
+                        <span><i class="fas fa-brain"></i> Psychological</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-play"></i> Play demo</a>
+                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> High-level GDD</button>
+                        <a href="shika_low_level.doc" download class="btn"><i class="fas fa-download"></i> Low-level .doc</a>
+                    </div>
+                </div>
             </div>
-            <p class="text-center mt-8 text-gray-300 max-w-2xl mx-auto">Mỗi khách tối đa 3 lượt hỏi‑pha. Sai 3 lần = bad end riêng. <br> 2 ngày liên tiếp không đủ điểm → chết đói. 10 ngày → good/bad end tổng.</p>
-        </div>
-    </section>
 
-    <!-- MASK MECHANIC BẢNG PHẢN ỨNG -->
-    <section class="max-w-6xl mx-auto px-6 py-10">
-        <h2 class="text-4xl font-bold mb-8 flex items-center"><i class="fas fa-mask text-orange-300 mr-4"></i> Mặt nạ cảm xúc</h2>
-        <div class="overflow-x-auto">
-            <table class="w-full border-collapse backdrop-blur bg-black/20 rounded-2xl">
-                <thead>
-                    <tr class="border-b border-white/20 text-left text-pink-200">
-                        <th class="p-4">Cảm xúc</th>
-                        <th class="p-4">Hỏi ĐÚNG (tầng 1-2)</th>
-                        <th class="p-4">Hỏi SAI</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-white/10">
-                    <tr><td class="p-4 font-bold">Buồn</td><td class="p-4">Mặt nạ cười chảy nước mắt</td><td class="p-4">Cười to hơn, giọng mỉa mai</td></tr>
-                    <tr><td class="p-4 font-bold">Giận</td><td class="p-4">Cau có rung bần bật, nghiến răng</td><td class="p-4">Im lặng nhìn chằm chằm</td></tr>
-                    <tr><td class="p-4 font-bold">Sợ</td><td class="p-4">Đổ mồ hôi, mắt đảo liên tục</td><td class="p-4">Nói chuyện triết lý xa xôi</td></tr>
-                    <tr><td class="p-4 font-bold">Cô đơn</td><td class="p-4">Nứt một đường ở tim</td><td class="p-4">Nói về sự bận rộn giả tạo</td></tr>
-                    <tr><td class="p-4 font-bold">Tội lỗi</td><td class="p-4">Cúi gằm xuống</td><td class="p-4">Đổ lỗi cho hoàn cảnh</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- ĐỒ UỐNG & CẢM XÚC (grid) -->
-    <section class="max-w-6xl mx-auto px-6 py-10">
-        <h2 class="text-4xl font-bold mb-8 flex items-center"><i class="fas fa-mug-hot text-yellow-300 mr-4"></i> Pha chế · 7 cảm xúc</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-gradient-to-br from-amber-800 to-amber-600 p-4 rounded-3xl text-center shadow-2xl"><i class="fas fa-leaf text-3xl mb-2"></i><br>Buồn · Trà</div>
-            <div class="bg-gradient-to-br from-sky-300 to-blue-400 p-4 rounded-3xl text-center shadow-2xl"><i class="fas fa-droplet text-3xl mb-2"></i><br>Giận · Nước lọc</div>
-            <div class="bg-gradient-to-br from-stone-700 to-stone-900 p-4 rounded-3xl text-center shadow-2xl"><i class="fas fa-mug-saucer text-3xl mb-2"></i><br>Sợ · Cà phê</div>
-            <div class="bg-gradient-to-br from-white to-gray-300 text-gray-800 p-4 rounded-3xl text-center shadow-2xl"><i class="fas fa-jug text-3xl mb-2"></i><br>Cô đơn · Sữa</div>
-            <div class="bg-gradient-to-br from-amber-400 to-yellow-600 p-4 rounded-3xl text-center shadow-2xl"><i class="fas fa-jar text-3xl mb-2"></i><br>Tội lỗi · Mật ong</div>
-            <div class="bg-gradient-to-br from-orange-600 to-red-700 p-4 rounded-3xl text-center shadow-2xl"><i class="fas fa-pepper-hot text-3xl mb-2"></i><br>Ghen tị · Gừng</div>
-            <div class="bg-gradient-to-br from-emerald-800 to-lime-900 p-4 rounded-3xl text-center shadow-2xl"><i class="fas fa-mug-hot text-3xl mb-2"></i><br>Bất lực · Cacao</div>
-        </div>
-    </section>
-
-    <!-- CUSTOMER PERSONAS (cards) -->
-    <section class="max-w-6xl mx-auto px-6 py-10">
-        <h2 class="text-4xl font-bold mb-8 flex items-center"><i class="fas fa-users text-blue-300 mr-4"></i> 11 khách hàng – 11 số phận</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div class="backdrop-blur bg-white/5 p-5 rounded-2xl border border-white/20 card-hover">
-                <div class="flex gap-3"><i class="fas fa-chalkboard-user text-3xl text-blue-300"></i><div><span class="font-bold text-xl">Ông giáo già</span><span class="ml-2 text-sm bg-pink-500/30 px-2 rounded-full">Tội lỗi + Cô đơn</span><p class="text-sm mt-1">Hối hận vì quá khắt khe với con.</p></div></div>
+            <!-- Game 2: (ví dụ game khác) -->
+            <div class="game-card">
+                <div class="game-cover">🌿</div>
+                <div class="game-info">
+                    <div class="game-title">MƠ <span style="font-size: 18px; background: #dbb58b; padding: 2px 10px; border-radius: 60px;">2025</span></div>
+                    <div class="game-tagline">giấc mơ của những chiếc lá</div>
+                    <div class="game-desc">Game thơ ngắn về một cô gái có thể nghe được ký ức của cây. Click & cảm nhận.</div>
+                    <div class="game-meta">
+                        <span><i class="fas fa-leaf"></i> Poetic</span>
+                        <span><i class="fas fa-cloud"></i> Relax</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-play"></i> Play demo</a>
+                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> High-level</button>
+                        <a href="#" download class="btn"><i class="fas fa-download"></i> Low-level .doc</a>
+                    </div>
+                </div>
             </div>
-            <div class="backdrop-blur bg-white/5 p-5 rounded-2xl border border-white/20 card-hover">
-                <div class="flex gap-3"><i class="fas fa-microphone-lines text-3xl text-purple-300"></i><div><span class="font-bold text-xl">Cô ca sĩ hết thời</span><span class="ml-2 text-sm bg-pink-500/30 px-2 rounded-full">Ghen tị + Bất lực</span><p class="text-sm mt-1">Ghen tị với đàn em, bất lực vì tuổi già.</p></div></div>
-            </div>
-            <div class="backdrop-blur bg-white/5 p-5 rounded-2xl border border-white/20 card-hover">
-                <div class="flex gap-3"><i class="fas fa-user-secret text-3xl text-indigo-300"></i><div><span class="font-bold text-xl">Gã thám tử tư</span><span class="ml-2 text-sm bg-pink-500/30 px-2 rounded-full">Sợ + Giận</span><p class="text-sm mt-1">Bị đe dọa, giận dữ vì bất công.</p></div></div>
-            </div>
-            <!-- thêm nhanh 3 khách nữa để đủ 6, nhưng có thể liệt kê đủ 11 bằng cách scroll, nhưng vì demo nên để vậy -->
-        </div>
-        <p class="text-right text-sm mt-2 text-gray-400">... và 7 nhân vật khác, gồm cả "Người Không Mặt" ngày thứ 10.</p>
-    </section>
 
-    <!-- PROGRESSION & SPECIAL EVENTS -->
-    <section class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-8">
-        <div class="bg-gradient-to-br from-[#1d1b2b] to-[#2a1f3a] p-6 rounded-3xl">
-            <h3 class="text-2xl font-bold mb-4"><i class="fas fa-calendar-alt text-pink-400 mr-2"></i> Tiến trình ngày</h3>
-            <ul class="space-y-4">
-                <li class="relative pl-8"><span class="timeline-dot"></span><span class="font-bold">Ngày 1-3:</span> 1 cảm xúc, dễ đoán, nhạc jazz ấm.</li>
-                <li class="relative pl-8"><span class="timeline-dot bg-purple-400"></span><span class="font-bold">Ngày 4-7:</span> 1 thật + 1 ẩn, lời thoại mâu thuẫn.</li>
-                <li class="relative pl-8"><span class="timeline-dot bg-pink-400"></span><span class="font-bold">Ngày 8-10:</span> 1 thật + 2 ẩn, khách nói dối, test lòng tin.</li>
-            </ul>
+            <!-- Game 3: thêm nếu muốn -->
         </div>
-        <div class="bg-gradient-to-br from-[#1d1b2b] to-[#381e2e] p-6 rounded-3xl">
-            <h3 class="text-2xl font-bold mb-4"><i class="fas fa-bolt text-yellow-300 mr-2"></i> Sự kiện đặc biệt</h3>
-            <p><i class="fas fa-user-tie text-blue-300 mr-2"></i> Thanh tra chính phủ (ngày 6-10) – phục vụ nước lọc.</p>
-            <p><i class="fas fa-bolt text-gray-300 mr-2"></i> Mất điện (ngày 4-7) – pha trong tối, chỉ dựa lời nói.</p>
-            <p><i class="fas fa-gift text-pink-300 mr-2"></i> Quà tặng khi True End: sách (thêm slot hỏi), thám tử báo trước thanh tra.</p>
-            <p><i class="fas fa-alien text-purple-300 mr-2"></i> Bẫy hội thoại: lộ danh tính UFO → chỉ còn 8 ngày.</p>
-        </div>
-    </section>
 
-    <!-- AUDIO/VISUAL TEASER -->
-    <section class="max-w-6xl mx-auto px-6 py-10">
-        <h2 class="text-4xl font-bold mb-8 flex items-center"><i class="fas fa-paintbrush text-pink-400 mr-4"></i> Visual & Audio</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="backdrop-blur bg-black/30 p-6 rounded-3xl">
-                <i class="fas fa-eye text-3xl text-cyan-300 mb-3"></i>
-                <h3 class="text-xl font-bold">2D hoạt họa, ánh sáng vàng ấm</h3>
-                <p>Mặt nạ nứt, lệch, biến dạng theo cảm xúc. Biểu cảm cơ thể thay thế nét mặt. Hiệu ứng vỡ mặt nạ chậm khi True End.</p>
-            </div>
-            <div class="backdrop-blur bg-black/30 p-6 rounded-3xl">
-                <i class="fas fa-headphones text-3xl text-green-300 mb-3"></i>
-                <h3 class="text-xl font-bold">Jazz chậm, layer cảm xúc</h3>
-                <p>Piano ấm, bass lười. Buồn → violin, giận → trống trầm, sợ → synth rung. Sai lệch nhịp, ù tai khi gần bad end.</p>
+        <!-- MODAL (HIGH-LEVEL GDD) - nội dung sẽ được thay bằng JS -->
+        <div id="gddModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalContent">
+                    <!-- Inject bằng JS -->
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- ENDINGS -->
-    <section class="max-w-6xl mx-auto px-6 py-10">
-        <h2 class="text-4xl font-bold mb-8 flex items-center"><i class="fas fa-skull text-red-400 mr-4"></i> Kết cục</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div>
-                <h3 class="text-2xl font-semibold flex items-center gap-2"><i class="fas fa-user"></i> Khách hàng</h3>
-                <ul class="list-disc list-inside space-y-1 text-gray-300">
-                    <li><span class="text-emerald-400">True End</span> – đúng 3/3 hỏi + 3/3 pha (nhận quà)</li>
-                    <li><span class="text-yellow-400">Good End</span> – đúng 2/3 (khách nguôi ngoai)</li>
-                    <li><span class="text-red-400">Bad End</span> – sai 3/3 (khách rời đi với tin xấu)</li>
-                </ul>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="social">
+                <a href="#"><i class="fab fa-itch-io"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
             </div>
-            <div>
-                <h3 class="text-2xl font-semibold flex items-center gap-2"><i class="fas fa-user-astronaut"></i> Người chơi</h3>
-                <ul class="list-disc list-inside space-y-1 text-gray-300">
-                    <li><span class="text-red-400">Chết đói</span> – 2 ngày liên tiếp điểm &lt;3</li>
-                    <li><span class="text-emerald-400">Good End</span> – điểm ≥18 sau 10 ngày (về nhà)</li>
-                    <li><span class="text-red-400">Bad End</span> – điểm &lt;18 (FBI bắt thí nghiệm)</li>
-                    <li><span class="text-purple-400">Easter egg</span> – điểm =18</li>
-                </ul>
-            </div>
+            <p style="margin-top: 24px;">© 2026 Quân Đặng · tất cả game đều free · chơi vui 🌙</p>
         </div>
-    </section>
+    </div>
 
-    <!-- LINK TO LOW-LEVEL DOC & FOOTER -->
-    <footer class="max-w-6xl mx-auto px-6 py-16 text-center border-t border-white/20">
-        <p class="text-2xl font-light italic">“Bạn sống nhờ nỗi đau của người khác, nhưng chỉ tồn tại nếu giúp họ vượt qua nó.”</p>
-        <a href="#" class="inline-block mt-8 bg-gradient-to-r from-pink-500 to-purple-500 px-10 py-4 rounded-full text-xl font-bold shadow-2xl hover:scale-105 transition-transform">📘 Đọc low‑level GDD (PDF)</a>
-        <p class="mt-8 text-sm text-gray-500"><i class="far fa-copyright"></i> SHIKA STUDIO · Đặng Đông Quân · Free on itch</p>
-    </footer>
+    <script>
+        // Dữ liệu high-level GDD cho từng game (bạn có thể viết HTML trực tiếp ở đây)
+        const highLevelContent = {
+            shika: `
+                <h2>🎭 SHIKA — I know what you want to drink</h2>
+                <div class="modal-section">
+                    <h3>📌 concept</h3>
+                    <p>Bạn là sinh vật ngoài hành tinh mắc kẹt, mở quán nước chỉ dành cho người mang cảm xúc tiêu cực. Pha chế đúng để thu hoạch nỗi đau làm nhiên liệu về nhà.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>🎯 core loop</h3>
+                    <p>Mở quán → trò chuyện → đọc “mặt nạ” cảm xúc → pha chế → nhận phản hồi → mở thêm thông tin → quyết định số phận khách → kiểm tra sinh tồn.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>😶 mặt nạ cảm xúc</h3>
+                    <p>Mỗi khách đeo mặt nạ vô hình chỉ bạn thấy. Nó rung, nứt, đổi màu khi bạn hỏi đúng/sai — cơ chế đọc vị core.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>🍹 pha chế & cảm xúc</h3>
+                    <p>Buồn → Trà · Giận → Nước lọc · Sợ → Cà phê · Cô đơn → Sữa · Tội lỗi → Mật ong · Ghen tị → Gừng · Bất lực → Cacao</p>
+                </div>
+                <div class="modal-section">
+                    <h3>⏳ tiến trình & kết cục</h3>
+                    <p>10 ngày, mỗi ngày 2 khách. 3 lần thử/khách. 2 ngày liên tiếp không đủ điểm → chết đói. Điểm ≥18 sau 10 ngày → về nhà (good end). <18 → FBI bắt (bad end).</p>
+                </div>
+            `,
+            // Bạn có thể thêm content cho game khác ở đây, ví dụ:
+            mo: `
+                <h2>🌿 MƠ — giấc mơ của những chiếc lá</h2>
+                <p>High-level của game MƠ ...</p>
+            `
+        };
 
-    <!-- decoration floating masks (chỉ để trang trí) -->
-    <div class="fixed bottom-5 left-5 opacity-20 text-8xl rotate-12 select-none">🎭</div>
-    <div class="fixed top-20 right-5 opacity-10 text-9xl select-none">🌙</div>
+        // Mở modal
+        const modal = document.getElementById('gddModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeBtn = document.querySelector('.close-modal');
+
+        // Gán sự kiện cho tất cả nút high-level
+        document.querySelectorAll('.high-level-btn').forEach((btn, index) => {
+            btn.addEventListener('click', (e) => {
+                const card = e.target.closest('.game-card');
+                let gameKey = 'shika'; // mặc định
+                if (card) {
+                    // ưu tiên dùng data attribute nếu có, hoặc dựa vào tiêu đề
+                    const titleElem = card.querySelector('.game-title');
+                    if (titleElem && titleElem.innerText.includes('MƠ')) gameKey = 'mo';
+                }
+                modalContent.innerHTML = highLevelContent[gameKey] || '<p>Đang cập nhật nội dung...</p>';
+                modal.classList.add('active');
+            });
+        });
+
+        // Đóng modal
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
