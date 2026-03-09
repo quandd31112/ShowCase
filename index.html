@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ĐẶNG ĐÔNG QUÂN (SHIKA) · glitch / game design</title>
+    <title>Quân Đặng · game portfolio</title>
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -15,401 +15,390 @@
         }
 
         body {
-            background: #0b0d1e;
-            font-family: 'Space Mono', monospace;
-            color: #c0e0ff;
+            background: #0f0f12;
+            font-family: 'Inter', sans-serif;
+            color: #eaeaea;
             line-height: 1.5;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* CRT effect + noise */
-        body::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: repeating-linear-gradient(0deg, rgba(0,255,255,0.03) 0px, rgba(255,0,255,0.03) 2px, transparent 3px, transparent 5px);
-            pointer-events: none;
-            z-index: 999;
-            mix-blend-mode: overlay;
-        }
-
-        .glitch-title {
-            font-size: 64px;
-            font-weight: 700;
-            text-transform: uppercase;
-            position: relative;
-            text-shadow: 0.05em 0 0 rgba(255,0,255,0.7), -0.05em -0.025em 0 rgba(0,255,255,0.7);
-            animation: glitch-shake 0.3s infinite alternate;
-        }
-
-        @keyframes glitch-shake {
-            0% { transform: skew(0deg); }
-            20% { transform: skew(2deg); }
-            40% { transform: skew(-2deg); }
-            60% { transform: skew(1deg); }
-            80% { transform: skew(-1deg); }
-            100% { transform: skew(0deg); }
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 20px;
-            position: relative;
-            z-index: 10;
+            padding: 40px 24px;
         }
 
-        /* Profile card with cyber border */
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 70px;
-            background: rgba(10, 20, 40, 0.7);
-            backdrop-filter: blur(8px);
-            border: 2px solid #3eff9e;
-            box-shadow: 0 0 20px #3eff9e66, inset 0 0 10px #3eff9e33;
-            padding: 30px 40px;
-            border-radius: 40px 12px 40px 12px;
-            flex-wrap: wrap;
+        /* Header */
+        .profile-header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #2a2a30;
+            padding-bottom: 30px;
         }
 
-        .avatar {
-            width: 130px;
-            height: 130px;
-            background: #001c2f;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            border: 3px solid #ff71ce;
-            box-shadow: 0 0 30px #ff71ce;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 70px;
-            color: #b2f0ff;
-            animation: morph 8s ease-in-out infinite;
-        }
-
-        @keyframes morph {
-            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-            50% { border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; }
-            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-        }
-
-        .intro h1 {
-            font-size: 52px;
-            background: linear-gradient(45deg, #a0f0ff, #ffa4f0);
+        .profile-header h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff, #a0a0b0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
-
-        .intro p {
-            font-size: 18px;
-            color: #b5e4ff;
-            max-width: 600px;
-            border-left: 4px solid #f0f;
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-
-        .section-title {
-            font-size: 38px;
-            font-weight: 700;
-            margin: 70px 0 40px;
-            display: inline-block;
-            background: #000c1a;
-            padding: 8px 30px 8px 20px;
-            border: 2px solid #0ff;
-            box-shadow: 0 0 15px cyan;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
-        }
-
-        /* Game grid – neon/glitch cards */
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 30px;
-        }
-
-        .game-card {
-            background: #0f1424;
-            border: 2px solid #2feb9e;
-            border-radius: 24px 8px 24px 8px;
-            overflow: hidden;
-            transition: 0.2s all;
-            box-shadow: 0 0 20px #2feb9e4d, inset 0 0 10px #2feb9e33;
-            backdrop-filter: blur(2px);
-            position: relative;
-        }
-
-        .game-card:hover {
-            border-color: #ff71ce;
-            box-shadow: 0 0 30px #ff71ce, 0 10px 30px black;
-            transform: scale(1.02) rotate(0.3deg);
-        }
-
-        .game-card::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 70%, rgba(255,0,255,0.1) 100%);
-            pointer-events: none;
-        }
-
-        .game-cover {
-            height: 200px;
-            background: radial-gradient(circle at 30% 30%, #1f3640, #030b1a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 90px;
-            filter: drop-shadow(0 0 15px cyan);
-            border-bottom: 2px solid cyan;
-        }
-
-        .game-info {
-            padding: 28px;
-        }
-
-        .game-title {
-            font-size: 32px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             margin-bottom: 8px;
-            color: #fff;
-            text-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
         }
 
-        .game-year {
-            font-size: 16px;
-            background: #101624;
-            border: 2px solid #f0f;
-            padding: 2px 12px;
-            border-radius: 30px;
-            color: #f0f;
+        .profile-header .tagline {
+            font-size: 18px;
+            color: #8b8b98;
+            max-width: 600px;
             font-weight: 400;
         }
 
+        /* Filter / Section title */
+        .section-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0 24px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: -0.3px;
+        }
+
+        .section-title i {
+            color: #66c0f4;
+            margin-right: 10px;
+            font-size: 22px;
+        }
+
+        .game-count {
+            color: #66c0f4;
+            background: #1e1e24;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Game grid - Steam inspired but cleaner */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .game-card {
+            background: #1a1a20;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            border: 1px solid #2a2a32;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            border-color: #66c0f4;
+            box-shadow: 0 12px 24px -8px rgba(102, 192, 244, 0.2);
+            background: #202028;
+        }
+
+        .game-cover {
+            height: 180px;
+            background: #252530;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: rgba(255,255,255,0.1);
+            border-bottom: 1px solid #2a2a32;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 60%, rgba(102, 192, 244, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        .game-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .game-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .game-year {
+            font-size: 14px;
+            color: #66c0f4;
+            background: #1e2a34;
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
         .game-tagline {
-            font-size: 16px;
-            color: #8fffc7;
-            margin-bottom: 16px;
+            font-size: 14px;
+            color: #8b8b98;
+            margin-bottom: 14px;
             font-style: italic;
-            border-bottom: 1px dashed #3eff9e;
-            padding-bottom: 8px;
+            border-left: 2px solid #66c0f4;
+            padding-left: 12px;
         }
 
         .game-desc {
-            color: #b2d6ff;
-            margin-bottom: 24px;
-            font-size: 15px;
+            font-size: 14px;
+            color: #c0c0cc;
+            margin-bottom: 18px;
+            line-height: 1.5;
+            flex: 1;
         }
 
         .game-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px 12px;
-            margin-bottom: 28px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .game-meta span {
-            background: #021524;
-            border: 2px solid #0ff;
-            padding: 5px 14px;
-            border-radius: 40px;
+            background: #252530;
+            padding: 4px 12px;
+            border-radius: 30px;
             font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #0ff;
+            font-weight: 500;
+            color: #b0b0c0;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 0 8px cyan;
+            border: 1px solid #333340;
+        }
+
+        .game-meta i {
+            color: #66c0f4;
+            font-size: 12px;
         }
 
         .btn-group {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
+            margin-top: auto;
         }
 
         .btn {
-            padding: 12px 24px;
-            border-radius: 40px 8px 40px 8px;
-            font-weight: 700;
-            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
             border: none;
             cursor: pointer;
-            transition: 0.15s;
+            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: #0b121f;
-            color: #c0ffc0;
-            border: 2px solid #0ff;
-            box-shadow: 0 0 12px #0ff;
+            background: #2a2a34;
+            color: #e0e0e0;
+            border: 1px solid #3a3a48;
+            flex: 1;
+            justify-content: center;
         }
 
         .btn-primary {
-            background: #100f2a;
-            border-color: #ff71ce;
-            color: #ffb3f0;
-            box-shadow: 0 0 16px #ff71ce;
+            background: #1b4b6c;
+            border-color: #2a6a8c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e5a80;
+            border-color: #66c0f4;
         }
 
         .btn:hover {
-            transform: translateY(-4px) scale(1.02);
-            filter: brightness(1.2);
-            background: #001e2f;
+            background: #323240;
+            border-color: #505060;
         }
 
-        /* MODAL – glitchy popup */
+        /* Modal - clean, minimal, focused */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
         .modal.active { display: flex; }
 
         .modal-content {
-            background: #09121f;
+            background: #181820;
             max-width: 700px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
-            border-radius: 32px 8px 32px 8px;
-            padding: 40px;
-            border: 3px solid #0ff;
-            box-shadow: 0 0 50px #0ff, inset 0 0 30px #0ff33;
+            border-radius: 16px;
+            padding: 36px;
             position: relative;
+            border: 1px solid #2a3a44;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.7);
         }
 
         .close-modal {
             position: absolute;
-            top: 20px; right: 25px;
-            font-size: 40px;
+            top: 24px; right: 28px;
+            font-size: 32px;
             cursor: pointer;
-            color: #ff66cc;
-            transition: 0.2s;
+            color: #808090;
+            transition: color 0.2s;
+            line-height: 1;
         }
 
-        .close-modal:hover { color: #0ff; text-shadow: 0 0 20px cyan; }
+        .close-modal:hover { color: #66c0f4; }
 
         .modal h2 {
-            font-size: 40px;
-            background: linear-gradient(45deg, cyan, magenta);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            border-left: 8px solid magenta;
-            padding-left: 24px;
-            margin-bottom: 30px;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #fff;
+            border-bottom: 1px solid #2a3a44;
+            padding-bottom: 16px;
         }
 
         .modal-section {
-            margin: 30px 0;
-            border: 2px solid #3a5f7a;
-            padding: 24px;
-            border-radius: 20px 4px 20px 4px;
-            background: #030c17;
+            margin: 28px 0;
         }
 
         .modal-section h3 {
-            font-size: 26px;
-            color: #b5ffd0;
-            margin-bottom: 16px;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #66c0f4;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .footer {
-            margin-top: 120px;
-            text-align: center;
-            padding: 40px 0;
-            border-top: 3px dashed #0ff;
-            color: #76e4ff;
+        .modal-section p, .modal-section li {
+            color: #c0c0d0;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
-        .social a {
-            color: #f0f;
-            font-size: 32px;
-            margin: 0 16px;
-            transition: 0.2s;
-            display: inline-block;
+        .modal-section ul, .modal-section ol {
+            padding-left: 24px;
+            margin: 12px 0;
         }
 
-        .social a:hover { transform: scale(1.2); text-shadow: 0 0 30px cyan; color: cyan; }
-
-        /* scanline flicker */
-        .scanline {
+        .modal-section table {
             width: 100%;
-            height: 100%;
-            position: fixed;
-            background: linear-gradient(0deg, rgba(0,255,255,0.05) 0%, transparent 50%);
-            animation: scan 10s linear infinite;
-            pointer-events: none;
-            z-index: 1001;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
         }
 
-        @keyframes scan {
-            0% { top: -100%; }
-            100% { top: 100%; }
+        .modal-section th, .modal-section td {
+            text-align: left;
+            padding: 8px 8px 8px 0;
+            border-bottom: 1px solid #2a2a34;
+        }
+
+        .modal-section th {
+            color: #a0a0b0;
+            font-weight: 500;
+        }
+
+        .modal-section td {
+            color: #d0d0e0;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 100px;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #2a2a32;
+            color: #686878;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #808090;
+            font-size: 22px;
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #66c0f4;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-    <div class="scanline"></div>
-
     <div class="container">
         <!-- Header -->
-        <div class="profile">
-            <div class="avatar">🕹️</div>
-            <div class="intro">
-                <h1 class="glitch-title">ĐẶNG ĐÔNG QUÂN (SHIKA)</h1>
-                <p>glitch/cyber game designer · i make games about feelings, masks & digital ghosts · everything free.</p>
-            </div>
+        <div class="profile-header">
+            <h1>Quân Đặng</h1>
+            <div class="tagline">Game designer · crafting emotional, minimal, story-driven experiences. all games free.</div>
         </div>
 
-        <!-- GAMES SECTION -->
-        <h2 class="section-title">🕹️ ACTIVE CARTRIDGES</h2>
-        <div class="game-grid">
+        <!-- Games Section -->
+        <div class="section-bar">
+            <div class="section-title"><i class="fas fa-cube"></i> Projects</div>
+            <div class="game-count">2 games</div>
+        </div>
+
+        <div class="game-grid" id="game-grid">
             <!-- SHIKA -->
             <div class="game-card" data-game="shika">
                 <div class="game-cover">🎭</div>
                 <div class="game-info">
-                    <div class="game-title">SHIKA <span class="game-year">2026</span></div>
+                    <div class="game-title-row">
+                        <span class="game-title">SHIKA</span>
+                        <span class="game-year">2026</span>
+                    </div>
                     <div class="game-tagline">I know what you want to drink</div>
-                    <div class="game-desc">Brew with pain. Survive on emotions. You're a stranded alien reading customers through emotional masks.</div>
+                    <div class="game-desc">Brew with pain. Survive on emotions. A stranded alien reads customers through emotional masks.</div>
                     <div class="game-meta">
-                        <span><i class="fas fa-mask"></i> narrative</span>
-                        <span><i class="fas fa-heart"></i> dark cozy</span>
-                        <span><i class="fas fa-brain"></i> psycho</span>
+                        <span><i class="fas fa-mask"></i> Narrative</span>
+                        <span><i class="fas fa-heart"></i> Dark cozy</span>
+                        <span><i class="fas fa-brain"></i> Psychological</span>
                     </div>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-play"></i> demo</a>
-                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> high gdd</button>
-                        <a href="shika_low_level.doc" download class="btn"><i class="fas fa-download"></i> low .doc</a>
+                        <a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-play"></i> Demo</a>
+                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> GDD</button>
+                        <a href="#" download class="btn"><i class="fas fa-download"></i> Doc</a>
                     </div>
                 </div>
             </div>
@@ -418,25 +407,26 @@
             <div class="game-card" data-game="mo">
                 <div class="game-cover">🌿</div>
                 <div class="game-info">
-                    <div class="game-title">MƠ <span class="game-year">2025</span></div>
+                    <div class="game-title-row">
+                        <span class="game-title">MƠ</span>
+                        <span class="game-year">2025</span>
+                    </div>
                     <div class="game-tagline">dreams of leaves</div>
-                    <div class="game-desc">Short poetic game. A girl who hears memories of trees. Click. Breathe. Feel.</div>
+                    <div class="game-desc">A short poetic game about a girl who hears memories of trees. Click, breathe, feel.</div>
                     <div class="game-meta">
-                        <span><i class="fas fa-leaf"></i> poetic</span>
-                        <span><i class="fas fa-cloud"></i> ambient</span>
+                        <span><i class="fas fa-leaf"></i> Poetic</span>
+                        <span><i class="fas fa-cloud"></i> Ambient</span>
                     </div>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary"><i class="fas fa-play"></i> demo</a>
-                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> high</button>
-                        <a href="#" download class="btn"><i class="fas fa-download"></i> low .doc</a>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-play"></i> Demo</a>
+                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> GDD</button>
+                        <a href="#" download class="btn"><i class="fas fa-download"></i> Doc</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Bạn có thể thêm game ở đây -->
         </div>
 
-        <!-- MODAL (GDD) -->
+        <!-- MODAL -->
         <div id="gddModal" class="modal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
@@ -444,134 +434,125 @@
             </div>
         </div>
 
-        <!-- FOOTER -->
+        <!-- Footer -->
         <div class="footer">
-            <div class="social">
+            <div class="social-links">
                 <a href="#"><i class="fab fa-itch-io"></i></a>
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fas fa-envelope"></i></a>
             </div>
-            <p style="margin-top: 30px;">© 2026 QUÂN ĐẶNG · ALL GAMES FREE · INSERT COIN 🌙</p>
+            <p>© 2026 Quân Đặng · all games free · made with 🎮</p>
         </div>
     </div>
 
     <script>
+        // High-level GDD content - detailed but clean
         const highLevelContent = {
             shika: `
                 <h2>🎭 SHIKA — I Know What You Want to Drink</h2>
+                
+                <div class="modal-section">
+                    <h3>📌 Concept</h3>
+                    <p>You're a stranded alien running a bar that only appears to people drowning in negative emotions. To survive and return home, you must chat, read their emotional "mask", and brew the right drink — harvesting their pain as fuel. Each customer has 3 chances. Fail 3 times = their bad ending. 2 days without enough points = you starve.</p>
+                </div>
 
-<div class="modal-section">
-    <h3>📌 HIGH CONCEPT</h3>
-    <p><strong>Bạn là sinh vật ngoài hành tinh mắc kẹt trên Trái Đất.</strong> Mở quán nước bí ẩn chỉ xuất hiện trước những con người đang mang cảm xúc tiêu cực nhất. Thứ duyên nuôi sống bạn là <em>cảm xúc tiêu cực</em> – nhưng để thu hoạch được, bạn phải giúp họ đối diện và vượt qua nó. Mỗi khách đeo một <strong>"mặt nạ cảm xúc" vô hình</strong> chỉ bạn thấy. Trò chuyện, đặt câu hỏi, pha chế đúng loại đồ uống – đó là cách bạn gỡ từng lớp mặt nạ, khai thác câu chuyện đời họ và thu năng lượng cho phi thuyền.</p>
-</div>
+                <div class="modal-section">
+                    <h3>🎯 Core Loop</h3>
+                    <ul>
+                        <li>Open shop → 2 customers/day</li>
+                        <li>Chat → observe mask reactions (crack, tremble, change color)</li>
+                        <li>Deduce real emotion (they can lie, mislead)</li>
+                        <li>Brew drink matching emotion</li>
+                        <li>Get feedback → correct: mask cracks more, new info; wrong: lose chance</li>
+                        <li>Max 3 rounds per customer</li>
+                        <li>End day → check survival points</li>
+                    </ul>
+                </div>
 
-<div class="modal-section">
-    <h3>🎯 CORE LOOP</h3>
-    <ol style="list-style-type: none; padding-left: 0;">
-        <li>❶ MỞ QUÁN – mỗi ngày 2 khách tự động bước vào</li>
-        <li>❷ TRÒ CHUYỆN – chọn câu hỏi, quan sát phản ứng của “mặt nạ” (rung, nứt, đổi màu)</li>
-        <li>❸ SUY LUẬN – cảm xúc thật là gì? Đâu là giả? Khách có thể nói dối, đánh lạc hướng</li>
-        <li>❹ PHA CHẾ – chọn nguyên liệu ứng với cảm xúc bạn tin là đúng</li>
-        <li>❺ NHẬN PHẢN HỒI – đúng: mặt nạ nứt thêm, mở thông tin mới / sai: mặt nạ dày lên, mất cơ hội</li>
-        <li>❻ LẶP LẠI – tối đa 3 lượt hỏi‑pha cho mỗi khách</li>
-        <li>❼ KẾT THÚC NGÀY – tính điểm sinh tồn, kiểm tra nạn đói</li>
-        <li>❽ NGÀY MỚI – độ khó tăng dần (mặt nạ mơ hồ, lời thoại nhiễu hơn)</li>
-    </ol>
-</div>
+                <div class="modal-section">
+                    <h3>😶 Mask System</h3>
+                    <p>Each customer wears an invisible emotional mask — your only UI to read them. Mask reacts in real-time:</p>
+                    <ul>
+                        <li><strong>Ask right:</strong> trembles, cracks, glows — new clues</li>
+                        <li><strong>Ask wrong:</strong> stiffens, distorts, uncomfortable sounds</li>
+                        <li><strong>Brew right:</strong> mask slowly shatters, warm light — gain energy</li>
+                        <li><strong>Brew wrong:</strong> mask darkens, deforms — lose trust</li>
+                    </ul>
+                </div>
 
-<div class="modal-section">
-    <h3>😶 MẶT NẠ – CƠ CHẾ CỐT LÕI</h3>
-    <p>Mỗi khách đeo một “mặt nạ cảm xúc” vô hình – đó là giao diện trực quan duy nhất để bạn đọc vị họ. Mặt nạ phản ứng theo thời gian thực:</p>
-    <ul>
-        <li><strong>Hỏi đúng trúng cảm xúc thật:</strong> mặt nạ <em>rung nhẹ, nứt, đổi màu</em> – mở ra manh mối mới</li>
-        <li><strong>Hỏi sai hoặc chạm vào vùng giả:</strong> mặt nạ <em>cứng lại, cười méo, phát ra tiếng động khó chịu</em></li>
-        <li><strong>Pha đúng đồ uống:</strong> mặt nạ <em>vỡ từ từ, ánh sáng ấm lan tỏa</em> – bạn thu được năng lượng</li>
-        <li><strong>Pha sai:</strong> mặt nạ <em>tối sầm, biến dạng</em> – khách thu mình, mất niềm tin</li>
-    </ul>
-    <p>Mặt nạ càng về sau càng phức tạp: ngày 1–3 chỉ 1 lớp, ngày 4–7 thêm lớp ẩn, ngày 8–10 có thể 2–3 lớp cảm xúc đan xen.</p>
-</div>
+                <div class="modal-section">
+                    <h3>🍸 7 Emotions & Drinks</h3>
+                    <table>
+                        <tr><th>Emotion</th><th>Drink</th><th>Correct mask reaction</th></tr>
+                        <tr><td>Sadness</td><td>Tea</td><td>Crying mask with smile</td></tr>
+                        <tr><td>Anger</td><td>Water</td><td>Trembling frown, teeth grinding</td></tr>
+                        <tr><td>Fear</td><td>Coffee</td><td>Sweating, darting eyes</td></tr>
+                        <tr><td>Loneliness</td><td>Milk</td><td>Crack over the heart</td></tr>
+                        <tr><td>Guilt</td><td>Honey</td><td>Bowed down, heavy mask</td></tr>
+                        <tr><td>Envy</td><td>Ginger</td><td>Twitching mouth corner</td></tr>
+                        <tr><td>Helplessness</td><td>Cocoa</td><td>Empty, sighing</td></tr>
+                    </table>
+                    <p style="margin-top:12px;">Each customer has 1 main emotion + 0–2 sub-emotions. Difficulty increases daily.</p>
+                </div>
 
-<div class="modal-section">
-    <h3>🍸 ĐỒ UỐNG & 7 CẢM XÚC GỐC</h3>
-    <table style="width:100%; border-collapse: collapse; margin-top:12px;">
-        <tr><th style="text-align:left;">Cảm xúc</th><th style="text-align:left;">Đồ uống</th><th style="text-align:left;">Biểu hiện mặt nạ khi đúng</th></tr>
-        <tr><td>Buồn</td><td>Trà</td><td>Mặt nạ cười chảy nước mắt</td></tr>
-        <tr><td>Giận</td><td>Nước lọc</td><td>Cau có rung bần bật, nghiến răng</td></tr>
-        <tr><td>Sợ</td><td>Cà phê</td><td>Đổ mồ hôi, mắt đảo liên tục</td></tr>
-        <tr><td>Cô đơn</td><td>Sữa</td><td>Nứt một đường ở tim</td></tr>
-        <tr><td>Tội lỗi</td><td>Mật ong</td><td>Cúi gằm, mặt nạ nặng trĩu</td></tr>
-        <tr><td>Ghen tị</td><td>Gừng</td><td>Co giật khóe miệng</td></tr>
-        <tr><td>Bất lực</td><td>Cacao</td><td>Trống rỗng, thở dài</td></tr>
-    </table>
-    <p style="margin-top:12px;">Mỗi khách có <strong>1 cảm xúc chính + 0–2 cảm xúc phụ</strong>. Bạn phải khai thác qua 3 tầng câu hỏi để phát hiện combo và pha chế tỉ lệ phù hợp.</p>
-</div>
+                <div class="modal-section">
+                    <h3>👥 11 Customers</h3>
+                    <ul>
+                        <li><strong>Old teacher</strong> – Guilt + Loneliness (regret over his runaway child)</li>
+                        <li><strong>Has-been singer</strong> – Envy + Helplessness (jealous of younger artists)</li>
+                        <li><strong>Private eye</strong> – Fear + Anger (threatened, angry at injustice)</li>
+                        <li><strong>Lost child</strong> – Loneliness + Helplessness (abandoned)</li>
+                        <li><strong>Businesswoman</strong> – Sadness + Fear (bankrupt but hiding it)</li>
+                        <li><strong>Madman</strong> – Fear + Guilt (knows player's secret)</li>
+                        <li><strong>Lovesick guy</strong> – Anger + Sadness (betrayed)</li>
+                        <li><strong>Old flower seller</strong> – Helplessness + Sadness (amnesia, vague sadness)</li>
+                        <li><strong>Reformed conman</strong> – Guilt + Fear (wants redemption)</li>
+                        <li><strong>Blind girl</strong> – Fear + Helplessness (lost direction after accident)</li>
+                        <li><strong>"Faceless One"</strong> – Random (day 10, reflects player)</li>
+                    </ul>
+                </div>
 
-<div class="modal-section">
-    <h3>🧩 3 TẦNG CÂU HỎI – LỐI VÀO TÂM HỒN</h3>
-    <ul>
-        <li><strong>Tầng 1 – Thăm dò:</strong> 3 câu hỏi ngẫu nhiên từ các cảm xúc khác nhau. Mục tiêu: xác định cảm xúc nào khiến mặt nạ phản ứng.</li>
-        <li><strong>Tầng 2 – Đào sâu:</strong> Câu hỏi tập trung vào cảm xúc đã chọn + một câu hỏi mồi từ cảm xúc khác. Phát hiện combo (nếu khách phản ứng cả hai).</li>
-        <li><strong>Tầng 3 – Chốt hạ:</strong> Câu hỏi trực diện vào cảm xúc chiếm ưu thế. Nếu đúng, mặt nạ nứt hoàn toàn, tiết lộ tỉ lệ pha chế (ví dụ: 70% Buồn + 30% Cô đơn).</li>
-    </ul>
-</div>
+                <div class="modal-section">
+                    <h3>⏳ Progression & Endings</h3>
+                    <p><strong>Difficulty:</strong> Day 1-3: 1 emotion · Day 4-7: 1 main + 1 hidden · Day 8-10: 1 main + 2 hidden</p>
+                    <p><strong>Customer endings:</strong> True (3/3 correct) · Good (2/3) · Bad (0/3)</p>
+                    <p><strong>Player endings:</strong></p>
+                    <ul>
+                        <li>2 consecutive days total points < 3 → starve (bad end)</li>
+                        <li>After 10 days: ≥18 points → return home (good) · <18 points → FBI captures (bad)</li>
+                        <li>=18 points → easter egg</li>
+                    </ul>
+                </div>
 
-<div class="modal-section">
-    <h3>👥 11 KHÁCH HÀNG – 11 MẢNH ĐỜI</h3>
-    <p>Mỗi khách là một câu chuyện riêng, với combo cảm xúc đặc trưng và kết cục phụ thuộc vào bạn. Một số nhân vật tiêu biểu:</p>
-    <ul>
-        <li><strong>Ông giáo già</strong> – Tội lỗi + Cô đơn (hối hận vì quá khắt khe với con)</li>
-        <li><strong>Cô ca sĩ hết thời</strong> – Ghen tị + Bất lực</li>
-        <li><strong>Gã thám tử tư</strong> – Sợ + Giận (bị đe doạ, bất công)</li>
-        <li><strong>Đứa trẻ đi lạc</strong> – Cô đơn + Bất lực (bị bỏ rơi)</li>
-        <li><strong>"Người Không Mặt"</strong> – Ngày thứ 10, phản chiếu chính người chơi (cảm xúc ngẫu nhiên)</li>
-    </ul>
-</div>
-
-<div class="modal-section">
-    <h3>⏳ TIẾN TRÌNH & ĐỘ KHÓ</h3>
-    <ul>
-        <li><strong>Ngày 1–3:</strong> Mỗi khách 1 cảm xúc, mặt nạ dễ đọc, gợi ý thẳng.</li>
-        <li><strong>Ngày 4–7:</strong> 1 thật + 1 ẩn, lời thoại mâu thuẫn, xuất hiện “bẫy cảm xúc”.</li>
-        <li><strong>Ngày 8–10:</strong> 1 thật + 2 ẩn, khách chủ động nói dối, ít gợi ý trực quan.</li>
-    </ul>
-    <p><strong>Sự kiện đặc biệt (ngẫu nhiên):</strong> Thanh tra chính phủ, mất điện, quà tặng từ true end, bẫy hội thoại lộ danh tính UFO.</p>
-</div>
-
-<div class="modal-section">
-    <h3>⚖️ HỆ THỐNG ĐIỂM & KẾT CỤC</h3>
-    <p><strong>Mỗi khách:</strong> 3 lượt hỏi‑pha tối đa. Mỗi pha đúng = 1 điểm (năng lượng).</p>
-    <ul>
-        <li><span style="color:#7bed9f;">True end</span> – đúng cả 3 lượt hỏi + 3 pha (nhận quà, báo tin tốt)</li>
-        <li><span style="color:#ffd777;">Good end</span> – đúng 2/3 (khách nguôi ngoai, có thể quay lại)</li>
-        <li><span style="color:#ff7b7b;">Bad end</span> – sai 3/3 (khách rời đi với tin xấu)</li>
-    </ul>
-    <p><strong>Người chơi:</strong></p>
-    <ul>
-        <li>2 ngày liên tiếp <strong>tổng điểm &lt; 3</strong> → chết đói → <span style="color:#ff7b7b;">bad end</span></li>
-        <li>Sau 10 ngày:
-            <ul>
-                <li>Điểm ≥ 18 → <span style="color:#7bed9f;">good end</span> (đủ nhiên liệu, về nhà)</li>
-                <li>Điểm = 18 → <span style="color:#b983ff;">easter egg</span></li>
-                <li>Điểm &lt; 18 → <span style="color:#ff7b7b;">bad end</span> (FBI bắt, thí nghiệm)</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
-<div class="modal-section">
-    <h3>🎨 VISUAL & AUDIO PHONG CÁCH</h3>
-    <p><strong>Đồ hoạ:</strong> 2D hoạt hoạ, ánh sáng vàng ấm trong quán, tông lạnh bên ngoài. Mặt nạ biến dạng theo cảm xúc, biểu cảm cơ thể thay thế nét mặt. Hiệu ứng vỡ mặt nạ chậm, ánh sáng lan toả khi true end.</p>
-    <p><strong>Âm thanh:</strong> Jazz chậm, bass ấm, piano mềm. Mỗi cảm xúc thêm layer riêng (buồn – violin, giận – trống trầm, sợ – synth rung). Âm thanh méo, lệch nhịp khi chọn sai. Voice hint: thở dài, nghẹn giọng, cười gượng.</p>
-</div>
-
-<div class="modal-section">
-    <h3>💡 THÔNG ĐIỆP</h3>
-    <p><em>“Bạn sống nhờ nỗi đau của người khác, nhưng chỉ có thể tồn tại nếu giúp họ vượt qua nó.”</em> – Một trải nghiệm về sự đồng cảm bắt buộc, nơi lòng tốt không phải lựa chọn mà là điều kiện để sống.</p>
-</div>
+                <div class="modal-section">
+                    <h3>🎨 Visual & Audio</h3>
+                    <p><strong>Visual:</strong> 2D illustration, warm light inside bar vs cold outside. Masks deform by emotion. Slow shatter effect on true end.</p>
+                    <p><strong>Audio:</strong> Slow jazz (warm piano, lazy bass). Each emotion adds layer: sadness → violin, anger → heavy drums, fear → synth tremble. Audio distorts on wrong choices.</p>
+                </div>
+            `,
+            mo: `
+                <h2>🌿 MƠ — dreams of leaves</h2>
+                <div class="modal-section">
+                    <h3>📌 Concept</h3>
+                    <p>A girl named Mơ can hear the memories of trees. Click on leaves, listen to whispers, find peace. A 10-minute poetic experience.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>🎮 Gameplay</h3>
+                    <p>Minimal interaction — each leaf holds a short poem. No fail, no pressure. Just click and feel.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>✨ Features</h3>
+                    <ul>
+                        <li>Hand-drawn leaf illustrations</li>
+                        <li>Original ambient soundtrack</li>
+                        <li>3 short stories / poems</li>
+                    </ul>
+                </div>
             `
         };
 
+        // Modal logic
         const modal = document.getElementById('gddModal');
         const modalContent = document.getElementById('modalContent');
         const closeBtn = document.querySelector('.close-modal');
@@ -581,7 +562,7 @@
                 const card = e.target.closest('.game-card');
                 let gameKey = 'shika';
                 if (card && card.querySelector('.game-title')?.innerText.includes('MƠ')) gameKey = 'mo';
-                modalContent.innerHTML = highLevelContent[gameKey] || '<p style="color:cyan;">...loading glitch...</p>';
+                modalContent.innerHTML = highLevelContent[gameKey] || '<p>Loading...</p>';
                 modal.classList.add('active');
             });
         });
