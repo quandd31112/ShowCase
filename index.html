@@ -225,12 +225,12 @@
             <div class="avatar">👾</div>
             <div class="intro">
                 <h1>Quân Đặng</h1>
-                <p>Game designer · kể chuyện bằng cơ chế · yêu sự tối giản và cảm xúc “cozy nhưng day dứt”.</p>
+                <p>Game designer · storytelling through mechanics · lover of minimalism and “cozy yet haunting” emotions.</p>
             </div>
         </div>
 
         <!-- GAMES SECTION -->
-        <h2 class="section-title">🎮 dự án game</h2>
+        <h2 class="section-title">🎮 game projects</h2>
         <div class="game-grid" id="game-grid">
             <!-- Game 1: SHIKA -->
             <div class="game-card" data-game="shika">
@@ -238,7 +238,7 @@
                 <div class="game-info">
                     <div class="game-title">SHIKA <span style="font-size: 18px; background: #dbb58b; padding: 2px 10px; border-radius: 60px;">2026</span></div>
                     <div class="game-tagline">I know what you want to drink</div>
-                    <div class="game-desc">Pha chế bằng nỗi đau. Sinh tồn bằng cảm xúc. Bạn là người ngoài hành tinh mắc kẹt, phải đọc vị khách qua lớp mặt nạ cảm xúc.</div>
+                    <div class="game-desc">Brew with pain. Survive on emotions. You're a stranded alien who must read customers through their emotional masks.</div>
                     <div class="game-meta">
                         <span><i class="fas fa-mask"></i> Narrative</span>
                         <span><i class="fas fa-heart"></i> Dark cozy</span>
@@ -252,13 +252,13 @@
                 </div>
             </div>
 
-            <!-- Game 2: (ví dụ game khác) -->
+            <!-- Game 2: (example other game) -->
             <div class="game-card">
                 <div class="game-cover">🌿</div>
                 <div class="game-info">
                     <div class="game-title">MƠ <span style="font-size: 18px; background: #dbb58b; padding: 2px 10px; border-radius: 60px;">2025</span></div>
-                    <div class="game-tagline">giấc mơ của những chiếc lá</div>
-                    <div class="game-desc">Game thơ ngắn về một cô gái có thể nghe được ký ức của cây. Click & cảm nhận.</div>
+                    <div class="game-tagline">dreams of leaves</div>
+                    <div class="game-desc">A short poetic game about a girl who can hear trees' memories. Click & feel.</div>
                     <div class="game-meta">
                         <span><i class="fas fa-leaf"></i> Poetic</span>
                         <span><i class="fas fa-cloud"></i> Relax</span>
@@ -271,15 +271,15 @@
                 </div>
             </div>
 
-            <!-- Game 3: thêm nếu muốn -->
+            <!-- Game 3: add more if needed -->
         </div>
 
-        <!-- MODAL (HIGH-LEVEL GDD) - nội dung sẽ được thay bằng JS -->
+        <!-- MODAL (HIGH-LEVEL GDD) - content will be injected by JS -->
         <div id="gddModal" class="modal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
                 <div id="modalContent">
-                    <!-- Inject bằng JS -->
+                    <!-- Injected by JS -->
                 </div>
             </div>
         </div>
@@ -293,64 +293,63 @@
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-email"></i></a>
             </div>
-            <p style="margin-top: 24px;">© 2026 Quân Đặng · tất cả game đều free · chơi vui 🌙</p>
+            <p style="margin-top: 24px;">© 2026 Quân Đặng · all games free · enjoy 🌙</p>
         </div>
     </div>
 
     <script>
-        // Dữ liệu high-level GDD cho từng game (bạn có thể viết HTML trực tiếp ở đây)
+        // High-level GDD data for each game
         const highLevelContent = {
             shika: `
                 <h2>🎭 SHIKA — I know what you want to drink</h2>
                 <div class="modal-section">
                     <h3>📌 concept</h3>
-                    <p>Bạn là sinh vật ngoài hành tinh mắc kẹt, mở quán nước chỉ dành cho người mang cảm xúc tiêu cực. Pha chế đúng để thu hoạch nỗi đau làm nhiên liệu về nhà.</p>
+                    <p>You're a stranded alien running a mysterious bar that only appears to people drowning in negative emotions. Brew correctly to harvest their pain as fuel to return home.</p>
                 </div>
                 <div class="modal-section">
                     <h3>🎯 core loop</h3>
-                    <p>Mở quán → trò chuyện → đọc “mặt nạ” cảm xúc → pha chế → nhận phản hồi → mở thêm thông tin → quyết định số phận khách → kiểm tra sinh tồn.</p>
+                    <p>Open shop → chat → read emotional "masks" → brew → get feedback → unlock more info → decide customer's fate → check survival → next day.</p>
                 </div>
                 <div class="modal-section">
-                    <h3>😶 mặt nạ cảm xúc</h3>
-                    <p>Mỗi khách đeo mặt nạ vô hình chỉ bạn thấy. Nó rung, nứt, đổi màu khi bạn hỏi đúng/sai — cơ chế đọc vị core.</p>
+                    <h3>😶 emotional mask system</h3>
+                    <p>Each customer wears an invisible mask only you can see. It trembles, cracks, changes color when you ask right/wrong — the core mind-reading mechanic.</p>
                 </div>
                 <div class="modal-section">
-                    <h3>🍹 pha chế & cảm xúc</h3>
-                    <p>Buồn → Trà · Giận → Nước lọc · Sợ → Cà phê · Cô đơn → Sữa · Tội lỗi → Mật ong · Ghen tị → Gừng · Bất lực → Cacao</p>
+                    <h3>🍹 drinks & emotions</h3>
+                    <p>Sadness → Tea · Anger → Water · Fear → Coffee · Loneliness → Milk · Guilt → Honey · Envy → Ginger · Helplessness → Cocoa</p>
                 </div>
                 <div class="modal-section">
-                    <h3>⏳ tiến trình & kết cục</h3>
-                    <p>10 ngày, mỗi ngày 2 khách. 3 lần thử/khách. 2 ngày liên tiếp không đủ điểm → chết đói. Điểm ≥18 sau 10 ngày → về nhà (good end). <18 → FBI bắt (bad end).</p>
+                    <h3>⏳ progression & endings</h3>
+                    <p>10 days, 2 customers per day. 3 tries per customer. If you don't earn enough points for 2 consecutive days → starve. Score ≥18 after 10 days → return home (good end). <18 → FBI captures you (bad end).</p>
                 </div>
             `,
-            // Bạn có thể thêm content cho game khác ở đây, ví dụ:
+            // You can add content for other games here, for example:
             mo: `
-                <h2>🌿 MƠ — giấc mơ của những chiếc lá</h2>
-                <p>High-level của game MƠ ...</p>
+                <h2>🌿 MƠ — dreams of leaves</h2>
+                <p>High-level content for MƠ ...</p>
             `
         };
 
-        // Mở modal
+        // Modal functionality
         const modal = document.getElementById('gddModal');
         const modalContent = document.getElementById('modalContent');
         const closeBtn = document.querySelector('.close-modal');
 
-        // Gán sự kiện cho tất cả nút high-level
+        // Attach events to all high-level buttons
         document.querySelectorAll('.high-level-btn').forEach((btn, index) => {
             btn.addEventListener('click', (e) => {
                 const card = e.target.closest('.game-card');
-                let gameKey = 'shika'; // mặc định
+                let gameKey = 'shika'; // default
                 if (card) {
-                    // ưu tiên dùng data attribute nếu có, hoặc dựa vào tiêu đề
                     const titleElem = card.querySelector('.game-title');
                     if (titleElem && titleElem.innerText.includes('MƠ')) gameKey = 'mo';
                 }
-                modalContent.innerHTML = highLevelContent[gameKey] || '<p>Đang cập nhật nội dung...</p>';
+                modalContent.innerHTML = highLevelContent[gameKey] || '<p>Content under construction...</p>';
                 modal.classList.add('active');
             });
         });
 
-        // Đóng modal
+        // Close modal
         closeBtn.addEventListener('click', () => {
             modal.classList.remove('active');
         });
