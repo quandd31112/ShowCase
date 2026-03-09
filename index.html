@@ -3,359 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quân Đặng · Game Designer</title>
-    <!-- Font & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Quân Đặng · glitch / game design</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background: #f5f0eb;
-            font-family: 'Inter', sans-serif;
-            color: #2e2821;
-            line-height: 1.6;
+            background: #0b0d1e;
+            font-family: 'Space Mono', monospace;
+            color: #c0e0ff;
+            line-height: 1.5;
+            position: relative;
+            overflow-x: hidden;
         }
+
+        /* CRT effect + noise */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: repeating-linear-gradient(0deg, rgba(0,255,255,0.03) 0px, rgba(255,0,255,0.03) 2px, transparent 3px, transparent 5px);
+            pointer-events: none;
+            z-index: 999;
+            mix-blend-mode: overlay;
+        }
+
+        .glitch-title {
+            font-size: 64px;
+            font-weight: 700;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0.05em 0 0 rgba(255,0,255,0.7), -0.05em -0.025em 0 rgba(0,255,255,0.7);
+            animation: glitch-shake 0.3s infinite alternate;
+        }
+
+        @keyframes glitch-shake {
+            0% { transform: skew(0deg); }
+            20% { transform: skew(2deg); }
+            40% { transform: skew(-2deg); }
+            60% { transform: skew(1deg); }
+            80% { transform: skew(-1deg); }
+            100% { transform: skew(0deg); }
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 40px 24px;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 10;
         }
-        /* Header */
+
+        /* Profile card with cyber border */
         .profile {
             display: flex;
             align-items: center;
-            gap: 30px;
-            margin-bottom: 60px;
+            gap: 40px;
+            margin-bottom: 70px;
+            background: rgba(10, 20, 40, 0.7);
+            backdrop-filter: blur(8px);
+            border: 2px solid #3eff9e;
+            box-shadow: 0 0 20px #3eff9e66, inset 0 0 10px #3eff9e33;
+            padding: 30px 40px;
+            border-radius: 40px 12px 40px 12px;
             flex-wrap: wrap;
         }
+
         .avatar {
-            width: 120px;
-            height: 120px;
-            background: #cfa47b;
-            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            background: #001c2f;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            border: 3px solid #ff71ce;
+            box-shadow: 0 0 30px #ff71ce;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 56px;
-            color: #fff;
-            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.2);
+            font-size: 70px;
+            color: #b2f0ff;
+            animation: morph 8s ease-in-out infinite;
         }
+
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
         .intro h1 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-size: 52px;
+            background: linear-gradient(45deg, #a0f0ff, #ffa4f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
         }
+
         .intro p {
-            font-size: 20px;
-            color: #5f4e3c;
+            font-size: 18px;
+            color: #b5e4ff;
             max-width: 600px;
+            border-left: 4px solid #f0f;
+            padding-left: 20px;
+            margin-top: 10px;
         }
-        /* Section title */
+
         .section-title {
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 700;
-            margin: 60px 0 32px;
-            border-bottom: 3px solid #cfb191;
-            padding-bottom: 8px;
+            margin: 70px 0 40px;
             display: inline-block;
+            background: #000c1a;
+            padding: 8px 30px 8px 20px;
+            border: 2px solid #0ff;
+            box-shadow: 0 0 15px cyan;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
         }
-        /* Game cards */
+
+        /* Game grid – neon/glitch cards */
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             gap: 30px;
         }
+
         .game-card {
-            background: #fffcf8;
-            border-radius: 32px;
+            background: #0f1424;
+            border: 2px solid #2feb9e;
+            border-radius: 24px 8px 24px 8px;
             overflow: hidden;
-            box-shadow: 0 18px 30px -12px rgba(78, 55, 40, 0.25);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #eadacb;
+            transition: 0.2s all;
+            box-shadow: 0 0 20px #2feb9e4d, inset 0 0 10px #2feb9e33;
+            backdrop-filter: blur(2px);
+            position: relative;
         }
+
         .game-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 35px -10px #7a5d44;
+            border-color: #ff71ce;
+            box-shadow: 0 0 30px #ff71ce, 0 10px 30px black;
+            transform: scale(1.02) rotate(0.3deg);
         }
+
+        .game-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 70%, rgba(255,0,255,0.1) 100%);
+            pointer-events: none;
+        }
+
         .game-cover {
             height: 200px;
-            background: linear-gradient(145deg, #5e4b3a, #9f7e64);
+            background: radial-gradient(circle at 30% 30%, #1f3640, #030b1a);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 80px;
-            color: rgba(255,255,255,0.2);
-            font-weight: 700;
+            font-size: 90px;
+            filter: drop-shadow(0 0 15px cyan);
+            border-bottom: 2px solid cyan;
         }
+
         .game-info {
-            padding: 24px;
+            padding: 28px;
         }
+
         .game-title {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 8px;
+            color: #fff;
+            text-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
         }
+
+        .game-year {
+            font-size: 16px;
+            background: #101624;
+            border: 2px solid #f0f;
+            padding: 2px 12px;
+            border-radius: 30px;
+            color: #f0f;
+            font-weight: 400;
+        }
+
         .game-tagline {
-            font-size: 15px;
-            color: #8b6f54;
+            font-size: 16px;
+            color: #8fffc7;
             margin-bottom: 16px;
             font-style: italic;
+            border-bottom: 1px dashed #3eff9e;
+            padding-bottom: 8px;
         }
+
         .game-desc {
-            color: #3d332b;
+            color: #b2d6ff;
             margin-bottom: 24px;
             font-size: 15px;
         }
+
         .game-meta {
             display: flex;
             flex-wrap: wrap;
             gap: 8px 12px;
-            margin-bottom: 24px;
-            font-size: 13px;
-            font-weight: 500;
+            margin-bottom: 28px;
         }
+
         .game-meta span {
-            background: #ede3d9;
-            padding: 4px 12px;
+            background: #021524;
+            border: 2px solid #0ff;
+            padding: 5px 14px;
             border-radius: 40px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #0ff;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            box-shadow: 0 0 8px cyan;
         }
+
         .btn-group {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
         }
+
         .btn {
-            padding: 10px 20px;
-            border-radius: 60px;
-            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 40px 8px 40px 8px;
+            font-weight: 700;
             font-size: 14px;
             border: none;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: 0.15s;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
-            background: #f0e4d8;
-            color: #2e2821;
-            border: 1px solid #cfb8a8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #0b121f;
+            color: #c0ffc0;
+            border: 2px solid #0ff;
+            box-shadow: 0 0 12px #0ff;
         }
+
         .btn-primary {
-            background: #5b3f2c;
-            color: white;
-            border: none;
+            background: #100f2a;
+            border-color: #ff71ce;
+            color: #ffb3f0;
+            box-shadow: 0 0 16px #ff71ce;
         }
-        .btn-primary i { color: #f5c9a4; }
-        .btn:hover { transform: scale(1.02); filter: brightness(0.96); }
-        /* Modal (high-level GDD) */
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            filter: brightness(1.2);
+            background: #001e2f;
+        }
+
+        /* MODAL – glitchy popup */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.9);
             align-items: center;
             justify-content: center;
-            z-index: 999;
-            backdrop-filter: blur(5px);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
+
         .modal.active { display: flex; }
+
         .modal-content {
-            background: #fffcf5;
-            max-width: 600px;
+            background: #09121f;
+            max-width: 700px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
-            border-radius: 48px;
+            border-radius: 32px 8px 32px 8px;
             padding: 40px;
+            border: 3px solid #0ff;
+            box-shadow: 0 0 50px #0ff, inset 0 0 30px #0ff33;
             position: relative;
-            box-shadow: 0 40px 60px rgba(0,0,0,0.5);
-            border: 2px solid #dbbc9b;
         }
+
         .close-modal {
             position: absolute;
-            top: 24px; right: 30px;
-            font-size: 32px;
+            top: 20px; right: 25px;
+            font-size: 40px;
             cursor: pointer;
-            color: #987b63;
-            transition: color 0.2s;
+            color: #ff66cc;
+            transition: 0.2s;
         }
-        .close-modal:hover { color: #4f3624; }
+
+        .close-modal:hover { color: #0ff; text-shadow: 0 0 20px cyan; }
+
         .modal h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            border-left: 8px solid #b48a65;
-            padding-left: 20px;
+            font-size: 40px;
+            background: linear-gradient(45deg, cyan, magenta);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-left: 8px solid magenta;
+            padding-left: 24px;
+            margin-bottom: 30px;
         }
+
         .modal-section {
-            margin: 28px 0;
+            margin: 30px 0;
+            border: 2px solid #3a5f7a;
+            padding: 24px;
+            border-radius: 20px 4px 20px 4px;
+            background: #030c17;
         }
+
         .modal-section h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: #5e3f2c;
+            font-size: 26px;
+            color: #b5ffd0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        /* Footer */
+
         .footer {
-            margin-top: 100px;
+            margin-top: 120px;
             text-align: center;
-            color: #75604d;
-            font-size: 14px;
-            border-top: 1px dashed #dac1ae;
-            padding-top: 40px;
+            padding: 40px 0;
+            border-top: 3px dashed #0ff;
+            color: #76e4ff;
         }
+
         .social a {
-            color: #4f3b2c;
-            font-size: 28px;
-            margin: 0 12px;
-            transition: color 0.2s;
+            color: #f0f;
+            font-size: 32px;
+            margin: 0 16px;
+            transition: 0.2s;
+            display: inline-block;
         }
-        .social a:hover { color: #a5724b; }
+
+        .social a:hover { transform: scale(1.2); text-shadow: 0 0 30px cyan; color: cyan; }
+
+        /* scanline flicker */
+        .scanline {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: linear-gradient(0deg, rgba(0,255,255,0.05) 0%, transparent 50%);
+            animation: scan 10s linear infinite;
+            pointer-events: none;
+            z-index: 1001;
+        }
+
+        @keyframes scan {
+            0% { top: -100%; }
+            100% { top: 100%; }
+        }
     </style>
 </head>
 <body>
+    <div class="scanline"></div>
+
     <div class="container">
         <!-- Header -->
         <div class="profile">
-            <div class="avatar">👾</div>
+            <div class="avatar">🕹️</div>
             <div class="intro">
-                <h1>Quân Đặng</h1>
-                <p>Game designer · storytelling through mechanics · lover of minimalism and “cozy yet haunting” emotions.</p>
+                <h1 class="glitch-title">QUÂN ĐẶNG</h1>
+                <p>glitch/cyber game designer · i make games about feelings, masks & digital ghosts · everything free.</p>
             </div>
         </div>
 
         <!-- GAMES SECTION -->
-        <h2 class="section-title">🎮 game projects</h2>
-        <div class="game-grid" id="game-grid">
-            <!-- Game 1: SHIKA -->
+        <h2 class="section-title">🕹️ ACTIVE CARTRIDGES</h2>
+        <div class="game-grid">
+            <!-- SHIKA -->
             <div class="game-card" data-game="shika">
                 <div class="game-cover">🎭</div>
                 <div class="game-info">
-                    <div class="game-title">SHIKA <span style="font-size: 18px; background: #dbb58b; padding: 2px 10px; border-radius: 60px;">2026</span></div>
+                    <div class="game-title">SHIKA <span class="game-year">2026</span></div>
                     <div class="game-tagline">I know what you want to drink</div>
-                    <div class="game-desc">Brew with pain. Survive on emotions. You're a stranded alien who must read customers through their emotional masks.</div>
+                    <div class="game-desc">Brew with pain. Survive on emotions. You're a stranded alien reading customers through emotional masks.</div>
                     <div class="game-meta">
-                        <span><i class="fas fa-mask"></i> Narrative</span>
-                        <span><i class="fas fa-heart"></i> Dark cozy</span>
-                        <span><i class="fas fa-brain"></i> Psychological</span>
+                        <span><i class="fas fa-mask"></i> narrative</span>
+                        <span><i class="fas fa-heart"></i> dark cozy</span>
+                        <span><i class="fas fa-brain"></i> psycho</span>
                     </div>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-play"></i> Play demo</a>
-                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> High-level GDD</button>
-                        <a href="shika_low_level.doc" download class="btn"><i class="fas fa-download"></i> Low-level .doc</a>
+                        <a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-play"></i> demo</a>
+                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> high gdd</button>
+                        <a href="shika_low_level.doc" download class="btn"><i class="fas fa-download"></i> low .doc</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Game 2: (example other game) -->
-            <div class="game-card">
+            <!-- MƠ -->
+            <div class="game-card" data-game="mo">
                 <div class="game-cover">🌿</div>
                 <div class="game-info">
-                    <div class="game-title">MƠ <span style="font-size: 18px; background: #dbb58b; padding: 2px 10px; border-radius: 60px;">2025</span></div>
+                    <div class="game-title">MƠ <span class="game-year">2025</span></div>
                     <div class="game-tagline">dreams of leaves</div>
-                    <div class="game-desc">A short poetic game about a girl who can hear trees' memories. Click & feel.</div>
+                    <div class="game-desc">Short poetic game. A girl who hears memories of trees. Click. Breathe. Feel.</div>
                     <div class="game-meta">
-                        <span><i class="fas fa-leaf"></i> Poetic</span>
-                        <span><i class="fas fa-cloud"></i> Relax</span>
+                        <span><i class="fas fa-leaf"></i> poetic</span>
+                        <span><i class="fas fa-cloud"></i> ambient</span>
                     </div>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-play"></i> Play demo</a>
-                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> High-level</button>
-                        <a href="#" download class="btn"><i class="fas fa-download"></i> Low-level .doc</a>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-play"></i> demo</a>
+                        <button class="btn high-level-btn"><i class="fas fa-file-alt"></i> high</button>
+                        <a href="#" download class="btn"><i class="fas fa-download"></i> low .doc</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Game 3: add more if needed -->
+            <!-- Bạn có thể thêm game ở đây -->
         </div>
 
-        <!-- MODAL (HIGH-LEVEL GDD) - content will be injected by JS -->
+        <!-- MODAL (GDD) -->
         <div id="gddModal" class="modal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
-                <div id="modalContent">
-                    <!-- Injected by JS -->
-                </div>
+                <div id="modalContent"></div>
             </div>
         </div>
 
-        <!-- Footer -->
+        <!-- FOOTER -->
         <div class="footer">
             <div class="social">
                 <a href="#"><i class="fab fa-itch-io"></i></a>
-                <a href="#"><i class="fab fa-discord"></i></a>
                 <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-email"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
             </div>
-            <p style="margin-top: 24px;">© 2026 Quân Đặng · all games free · enjoy 🌙</p>
+            <p style="margin-top: 30px;">© 2026 QUÂN ĐẶNG · ALL GAMES FREE · INSERT COIN 🌙</p>
         </div>
     </div>
 
     <script>
-        // High-level GDD data for each game
         const highLevelContent = {
             shika: `
                 <h2>🎭 SHIKA — I know what you want to drink</h2>
                 <div class="modal-section">
-                    <h3>📌 concept</h3>
-                    <p>You're a stranded alien running a mysterious bar that only appears to people drowning in negative emotions. Brew correctly to harvest their pain as fuel to return home.</p>
+                    <h3>📌 CONCEPT</h3>
+                    <p>Stranded alien runs a bar for broken humans. Brew emotions. Harvest pain. Go home.</p>
                 </div>
                 <div class="modal-section">
-                    <h3>🎯 core loop</h3>
-                    <p>Open shop → chat → read emotional "masks" → brew → get feedback → unlock more info → decide customer's fate → check survival → next day.</p>
+                    <h3>🎯 CORE LOOP</h3>
+                    <p>OPEN → CHAT → READ MASK → BREW → FEEDBACK → FATE</p>
                 </div>
                 <div class="modal-section">
-                    <h3>😶 emotional mask system</h3>
-                    <p>Each customer wears an invisible mask only you can see. It trembles, cracks, changes color when you ask right/wrong — the core mind-reading mechanic.</p>
+                    <h3>😶 MASK SYSTEM</h3>
+                    <p>Invisible masks tremble, crack, glow — your only clue to their real emotion.</p>
                 </div>
                 <div class="modal-section">
-                    <h3>🍹 drinks & emotions</h3>
-                    <p>Sadness → Tea · Anger → Water · Fear → Coffee · Loneliness → Milk · Guilt → Honey · Envy → Ginger · Helplessness → Cocoa</p>
+                    <h3>🍹 DRINKS = EMOTIONS</h3>
+                    <p>Sad=Tea · Anger=Water · Fear=Coffee · Lonely=Milk · Guilt=Honey · Envy=Ginger · Helpless=Cocoa</p>
                 </div>
                 <div class="modal-section">
-                    <h3>⏳ progression & endings</h3>
-                    <p>10 days, 2 customers per day. 3 tries per customer. If you don't earn enough points for 2 consecutive days → starve. Score ≥18 after 10 days → return home (good end). <18 → FBI captures you (bad end).</p>
+                    <h3>⏳ ENDINGS</h3>
+                    <p>10 days, 3 tries/customer. 2 days no points = starve. ≥18 points = return home. Less = FBI.</p>
                 </div>
             `,
-            // You can add content for other games here, for example:
             mo: `
                 <h2>🌿 MƠ — dreams of leaves</h2>
-                <p>High-level content for MƠ ...</p>
+                <div class="modal-section">
+                    <h3>📌 CONCEPT</h3>
+                    <p>A girl named Mơ can hear the memories of trees. Click on leaves, listen to whispers, find peace.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>🎮 GAMEPLAY</h3>
+                    <p>Minimal interaction — each leaf holds a short poem. 10 minutes of calm.</p>
+                </div>
             `
         };
 
-        // Modal functionality
         const modal = document.getElementById('gddModal');
         const modalContent = document.getElementById('modalContent');
         const closeBtn = document.querySelector('.close-modal');
 
-        // Attach events to all high-level buttons
-        document.querySelectorAll('.high-level-btn').forEach((btn, index) => {
+        document.querySelectorAll('.high-level-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const card = e.target.closest('.game-card');
-                let gameKey = 'shika'; // default
-                if (card) {
-                    const titleElem = card.querySelector('.game-title');
-                    if (titleElem && titleElem.innerText.includes('MƠ')) gameKey = 'mo';
-                }
-                modalContent.innerHTML = highLevelContent[gameKey] || '<p>Content under construction...</p>';
+                let gameKey = 'shika';
+                if (card && card.querySelector('.game-title')?.innerText.includes('MƠ')) gameKey = 'mo';
+                modalContent.innerHTML = highLevelContent[gameKey] || '<p style="color:cyan;">...loading glitch...</p>';
                 modal.classList.add('active');
             });
         });
 
-        // Close modal
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) modal.classList.remove('active');
-        });
+        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        window.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
     </script>
 </body>
 </html>
