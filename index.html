@@ -459,38 +459,116 @@
     <script>
         const highLevelContent = {
             shika: `
-                <h2>🎭 SHIKA — I know what you want to drink</h2>
-                <div class="modal-section">
-                    <h3>📌 CONCEPT</h3>
-                    <p>Stranded alien runs a bar for broken humans. Brew emotions. Harvest pain. Go home.</p>
-                </div>
-                <div class="modal-section">
-                    <h3>🎯 CORE LOOP</h3>
-                    <p>OPEN → CHAT → READ MASK → BREW → FEEDBACK → FATE</p>
-                </div>
-                <div class="modal-section">
-                    <h3>😶 MASK SYSTEM</h3>
-                    <p>Invisible masks tremble, crack, glow — your only clue to their real emotion.</p>
-                </div>
-                <div class="modal-section">
-                    <h3>🍹 DRINKS = EMOTIONS</h3>
-                    <p>Sad=Tea · Anger=Water · Fear=Coffee · Lonely=Milk · Guilt=Honey · Envy=Ginger · Helpless=Cocoa</p>
-                </div>
-                <div class="modal-section">
-                    <h3>⏳ ENDINGS</h3>
-                    <p>10 days, 3 tries/customer. 2 days no points = starve. ≥18 points = return home. Less = FBI.</p>
-                </div>
-            `,
-            mo: `
-                <h2>🌿 MƠ — dreams of leaves</h2>
-                <div class="modal-section">
-                    <h3>📌 CONCEPT</h3>
-                    <p>A girl named Mơ can hear the memories of trees. Click on leaves, listen to whispers, find peace.</p>
-                </div>
-                <div class="modal-section">
-                    <h3>🎮 GAMEPLAY</h3>
-                    <p>Minimal interaction — each leaf holds a short poem. 10 minutes of calm.</p>
-                </div>
+                <h2>🎭 SHIKA — I Know What You Want to Drink</h2>
+
+<div class="modal-section">
+    <h3>📌 HIGH CONCEPT</h3>
+    <p><strong>Bạn là sinh vật ngoài hành tinh mắc kẹt trên Trái Đất.</strong> Mở quán nước bí ẩn chỉ xuất hiện trước những con người đang mang cảm xúc tiêu cực nhất. Thứ duyên nuôi sống bạn là <em>cảm xúc tiêu cực</em> – nhưng để thu hoạch được, bạn phải giúp họ đối diện và vượt qua nó. Mỗi khách đeo một <strong>"mặt nạ cảm xúc" vô hình</strong> chỉ bạn thấy. Trò chuyện, đặt câu hỏi, pha chế đúng loại đồ uống – đó là cách bạn gỡ từng lớp mặt nạ, khai thác câu chuyện đời họ và thu năng lượng cho phi thuyền.</p>
+</div>
+
+<div class="modal-section">
+    <h3>🎯 CORE LOOP</h3>
+    <ol style="list-style-type: none; padding-left: 0;">
+        <li>❶ MỞ QUÁN – mỗi ngày 2 khách tự động bước vào</li>
+        <li>❷ TRÒ CHUYỆN – chọn câu hỏi, quan sát phản ứng của “mặt nạ” (rung, nứt, đổi màu)</li>
+        <li>❸ SUY LUẬN – cảm xúc thật là gì? Đâu là giả? Khách có thể nói dối, đánh lạc hướng</li>
+        <li>❹ PHA CHẾ – chọn nguyên liệu ứng với cảm xúc bạn tin là đúng</li>
+        <li>❺ NHẬN PHẢN HỒI – đúng: mặt nạ nứt thêm, mở thông tin mới / sai: mặt nạ dày lên, mất cơ hội</li>
+        <li>❻ LẶP LẠI – tối đa 3 lượt hỏi‑pha cho mỗi khách</li>
+        <li>❼ KẾT THÚC NGÀY – tính điểm sinh tồn, kiểm tra nạn đói</li>
+        <li>❽ NGÀY MỚI – độ khó tăng dần (mặt nạ mơ hồ, lời thoại nhiễu hơn)</li>
+    </ol>
+</div>
+
+<div class="modal-section">
+    <h3>😶 MẶT NẠ – CƠ CHẾ CỐT LÕI</h3>
+    <p>Mỗi khách đeo một “mặt nạ cảm xúc” vô hình – đó là giao diện trực quan duy nhất để bạn đọc vị họ. Mặt nạ phản ứng theo thời gian thực:</p>
+    <ul>
+        <li><strong>Hỏi đúng trúng cảm xúc thật:</strong> mặt nạ <em>rung nhẹ, nứt, đổi màu</em> – mở ra manh mối mới</li>
+        <li><strong>Hỏi sai hoặc chạm vào vùng giả:</strong> mặt nạ <em>cứng lại, cười méo, phát ra tiếng động khó chịu</em></li>
+        <li><strong>Pha đúng đồ uống:</strong> mặt nạ <em>vỡ từ từ, ánh sáng ấm lan tỏa</em> – bạn thu được năng lượng</li>
+        <li><strong>Pha sai:</strong> mặt nạ <em>tối sầm, biến dạng</em> – khách thu mình, mất niềm tin</li>
+    </ul>
+    <p>Mặt nạ càng về sau càng phức tạp: ngày 1–3 chỉ 1 lớp, ngày 4–7 thêm lớp ẩn, ngày 8–10 có thể 2–3 lớp cảm xúc đan xen.</p>
+</div>
+
+<div class="modal-section">
+    <h3>🍸 ĐỒ UỐNG & 7 CẢM XÚC GỐC</h3>
+    <table style="width:100%; border-collapse: collapse; margin-top:12px;">
+        <tr><th style="text-align:left;">Cảm xúc</th><th style="text-align:left;">Đồ uống</th><th style="text-align:left;">Biểu hiện mặt nạ khi đúng</th></tr>
+        <tr><td>Buồn</td><td>Trà</td><td>Mặt nạ cười chảy nước mắt</td></tr>
+        <tr><td>Giận</td><td>Nước lọc</td><td>Cau có rung bần bật, nghiến răng</td></tr>
+        <tr><td>Sợ</td><td>Cà phê</td><td>Đổ mồ hôi, mắt đảo liên tục</td></tr>
+        <tr><td>Cô đơn</td><td>Sữa</td><td>Nứt một đường ở tim</td></tr>
+        <tr><td>Tội lỗi</td><td>Mật ong</td><td>Cúi gằm, mặt nạ nặng trĩu</td></tr>
+        <tr><td>Ghen tị</td><td>Gừng</td><td>Co giật khóe miệng</td></tr>
+        <tr><td>Bất lực</td><td>Cacao</td><td>Trống rỗng, thở dài</td></tr>
+    </table>
+    <p style="margin-top:12px;">Mỗi khách có <strong>1 cảm xúc chính + 0–2 cảm xúc phụ</strong>. Bạn phải khai thác qua 3 tầng câu hỏi để phát hiện combo và pha chế tỉ lệ phù hợp.</p>
+</div>
+
+<div class="modal-section">
+    <h3>🧩 3 TẦNG CÂU HỎI – LỐI VÀO TÂM HỒN</h3>
+    <ul>
+        <li><strong>Tầng 1 – Thăm dò:</strong> 3 câu hỏi ngẫu nhiên từ các cảm xúc khác nhau. Mục tiêu: xác định cảm xúc nào khiến mặt nạ phản ứng.</li>
+        <li><strong>Tầng 2 – Đào sâu:</strong> Câu hỏi tập trung vào cảm xúc đã chọn + một câu hỏi mồi từ cảm xúc khác. Phát hiện combo (nếu khách phản ứng cả hai).</li>
+        <li><strong>Tầng 3 – Chốt hạ:</strong> Câu hỏi trực diện vào cảm xúc chiếm ưu thế. Nếu đúng, mặt nạ nứt hoàn toàn, tiết lộ tỉ lệ pha chế (ví dụ: 70% Buồn + 30% Cô đơn).</li>
+    </ul>
+</div>
+
+<div class="modal-section">
+    <h3>👥 11 KHÁCH HÀNG – 11 MẢNH ĐỜI</h3>
+    <p>Mỗi khách là một câu chuyện riêng, với combo cảm xúc đặc trưng và kết cục phụ thuộc vào bạn. Một số nhân vật tiêu biểu:</p>
+    <ul>
+        <li><strong>Ông giáo già</strong> – Tội lỗi + Cô đơn (hối hận vì quá khắt khe với con)</li>
+        <li><strong>Cô ca sĩ hết thời</strong> – Ghen tị + Bất lực</li>
+        <li><strong>Gã thám tử tư</strong> – Sợ + Giận (bị đe doạ, bất công)</li>
+        <li><strong>Đứa trẻ đi lạc</strong> – Cô đơn + Bất lực (bị bỏ rơi)</li>
+        <li><strong>"Người Không Mặt"</strong> – Ngày thứ 10, phản chiếu chính người chơi (cảm xúc ngẫu nhiên)</li>
+    </ul>
+</div>
+
+<div class="modal-section">
+    <h3>⏳ TIẾN TRÌNH & ĐỘ KHÓ</h3>
+    <ul>
+        <li><strong>Ngày 1–3:</strong> Mỗi khách 1 cảm xúc, mặt nạ dễ đọc, gợi ý thẳng.</li>
+        <li><strong>Ngày 4–7:</strong> 1 thật + 1 ẩn, lời thoại mâu thuẫn, xuất hiện “bẫy cảm xúc”.</li>
+        <li><strong>Ngày 8–10:</strong> 1 thật + 2 ẩn, khách chủ động nói dối, ít gợi ý trực quan.</li>
+    </ul>
+    <p><strong>Sự kiện đặc biệt (ngẫu nhiên):</strong> Thanh tra chính phủ, mất điện, quà tặng từ true end, bẫy hội thoại lộ danh tính UFO.</p>
+</div>
+
+<div class="modal-section">
+    <h3>⚖️ HỆ THỐNG ĐIỂM & KẾT CỤC</h3>
+    <p><strong>Mỗi khách:</strong> 3 lượt hỏi‑pha tối đa. Mỗi pha đúng = 1 điểm (năng lượng).</p>
+    <ul>
+        <li><span style="color:#7bed9f;">True end</span> – đúng cả 3 lượt hỏi + 3 pha (nhận quà, báo tin tốt)</li>
+        <li><span style="color:#ffd777;">Good end</span> – đúng 2/3 (khách nguôi ngoai, có thể quay lại)</li>
+        <li><span style="color:#ff7b7b;">Bad end</span> – sai 3/3 (khách rời đi với tin xấu)</li>
+    </ul>
+    <p><strong>Người chơi:</strong></p>
+    <ul>
+        <li>2 ngày liên tiếp <strong>tổng điểm &lt; 3</strong> → chết đói → <span style="color:#ff7b7b;">bad end</span></li>
+        <li>Sau 10 ngày:
+            <ul>
+                <li>Điểm ≥ 18 → <span style="color:#7bed9f;">good end</span> (đủ nhiên liệu, về nhà)</li>
+                <li>Điểm = 18 → <span style="color:#b983ff;">easter egg</span></li>
+                <li>Điểm &lt; 18 → <span style="color:#ff7b7b;">bad end</span> (FBI bắt, thí nghiệm)</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="modal-section">
+    <h3>🎨 VISUAL & AUDIO PHONG CÁCH</h3>
+    <p><strong>Đồ hoạ:</strong> 2D hoạt hoạ, ánh sáng vàng ấm trong quán, tông lạnh bên ngoài. Mặt nạ biến dạng theo cảm xúc, biểu cảm cơ thể thay thế nét mặt. Hiệu ứng vỡ mặt nạ chậm, ánh sáng lan toả khi true end.</p>
+    <p><strong>Âm thanh:</strong> Jazz chậm, bass ấm, piano mềm. Mỗi cảm xúc thêm layer riêng (buồn – violin, giận – trống trầm, sợ – synth rung). Âm thanh méo, lệch nhịp khi chọn sai. Voice hint: thở dài, nghẹn giọng, cười gượng.</p>
+</div>
+
+<div class="modal-section">
+    <h3>💡 THÔNG ĐIỆP</h3>
+    <p><em>“Bạn sống nhờ nỗi đau của người khác, nhưng chỉ có thể tồn tại nếu giúp họ vượt qua nó.”</em> – Một trải nghiệm về sự đồng cảm bắt buộc, nơi lòng tốt không phải lựa chọn mà là điều kiện để sống.</p>
+</div>
             `
         };
 
