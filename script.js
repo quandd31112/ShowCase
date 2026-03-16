@@ -92,7 +92,124 @@ const highLevelContent = {
             to the dominant emotion. When a good or true ending is reached, the mask cracks 
             and warm light spreads.</p>
         </div>
-    `
+    `,
+    mrfixit: `
+        <h2>MR. FIX-IT</h2>
+
+        <div class="modal-section">
+            <h3>High-level concept</h3>
+            <p>MR. FIX-IT is a simulation and puzzle game where the player takes the role of a freelance electrician. 
+            Starting with simple tasks like replacing light bulbs or fixing sockets, the player gradually progresses 
+            to repairing complex electrical systems in large houses, villas and industrial buildings.</p>
+
+            <p>The core experience focuses on the feeling of career progression — beginning as a small handyman 
+            and eventually becoming a highly skilled electrical technician capable of solving large-scale problems.</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Core loop</h3>
+            <ul>
+                <li>Start in the office</li>
+                <li>Open the computer and receive a repair mission</li>
+                <li>Read the problem description and recommended tools</li>
+                <li>Select tools within limited inventory slots</li>
+                <li>Travel to the job location</li>
+                <li>Find the broken electrical components</li>
+                <li>Complete repair minigames and quick time events</li>
+                <li>Receive money and rating</li>
+                <li>Return to the office and upgrade tools or equipment</li>
+                <li>Accept the next mission</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Player progression</h3>
+            <ul>
+                <li>Earn money from completed repair jobs</li>
+                <li>Upgrade tools to reduce minigame difficulty</li>
+                <li>Upgrade office to unlock new tools</li>
+                <li>Unlock larger and more complex locations</li>
+                <li>Progress from small apartments to large construction sites</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Core systems</h3>
+            <ul>
+                <li>Tool selection system (limited inventory)</li>
+                <li>Quest receiving system from the office PC</li>
+                <li>Location exploration system</li>
+                <li>Electrical repair minigames</li>
+                <li>Upgrade system for tools and office</li>
+                <li>Rating and coin reward system</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Visual and audio direction</h3>
+            <p>The game uses a casual flat cartoon style with warm pastel colors. 
+            The tone is light and cozy, similar to games like Good Pizza Great Pizza and 
+            A Little to the Left. Music is playful and cartoon-like to support a relaxing 
+            but engaging work atmosphere.</p>
+        </div>
+    `,
+    outworld: `
+    <h2>OUTWORLD DOMINION</h2>
+
+    <div class="modal-section">
+        <h3>High-level concept</h3>
+        <p>Outworld Dominion is a fast-paced sci-fi FPS roguelike where players fight through hostile planets 
+        in short but intense combat runs. Each run generates different buffs, equipment and enemy encounters, 
+        allowing players to shape their own combat style while surviving increasingly brutal battles.</p>
+
+        <p>The core fantasy focuses on aggressive combat, rapid power scaling and strong replayability. 
+        Players grow stronger during each run through powerful buffs and equipment combinations while 
+        mastering skill-based movement, aiming and enemy pattern reading.</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core loop</h3>
+        <ul>
+            <li>Start in the spaceship hub</li>
+            <li>Upgrade gear, craft equipment or use gacha</li>
+            <li>Select a mission and starting buff</li>
+            <li>Deploy to a hostile planet</li>
+            <li>Complete multiple objectives while fighting waves of enemies</li>
+            <li>Receive buffs after completing objectives</li>
+            <li>Defeat the zone boss</li>
+            <li>Collect loot and resources</li>
+            <li>Return to the spaceship hub</li>
+            <li>Upgrade equipment and prepare for the next run</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Progression system</h3>
+        <ul>
+            <li>In-run progression through temporary buffs and item synergy</li>
+            <li>Meta progression through equipment upgrades and skill trees</li>
+            <li>Unlock new characters, weapons and planets</li>
+            <li>Difficulty increases as players conquer stronger planets</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Combat system</h3>
+        <ul>
+            <li>Fast paced arena FPS combat</li>
+            <li>Continuous enemy spawn creating constant pressure</li>
+            <li>Movement focused gameplay with dash and vertical mobility</li>
+            <li>Skill-based aiming and pattern recognition against bosses</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Visual and tone direction</h3>
+        <p>The game presents a brutal sci-fi atmosphere where players fight against hostile alien ecosystems. 
+        Environments include desert worlds, acid planets, ocean planets and death zones, each with unique 
+        hazards and enemy behaviors. The tone combines survival tension with explosive power fantasy combat.</p>
+    </div>
+`
 };
 
 // Modal logic
