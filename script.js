@@ -1,5 +1,69 @@
 // High-level GDD content for each game
 const highLevelContent = {
+    chick: `
+    <h2>CHICK CHICK</h2>
+
+    <div class="modal-section">
+        <h3>High-level concept</h3>
+        <p>CHICK CHICK is a grid-based puzzle game where players control a small chick on a journey to find its mother. 
+        The game focuses on learning through interaction, where players understand mechanics naturally by playing instead of following tutorials.</p>
+
+        <p>The core experience is built around clarity, logic, and progression — each level introduces a new mechanic, 
+        then combines it with previous ones to create more complex and satisfying challenges.</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core loop</h3>
+        <ul>
+            <li>Start the level</li>
+            <li>Observe the environment and mechanics</li>
+            <li>Plan a solution</li>
+            <li>Move and interact (push blocks, activate systems)</li>
+            <li>Avoid traps and hazards</li>
+            <li>Find and collect the key</li>
+            <li>Reach the exit door</li>
+            <li>Proceed to the next level</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core mechanics</h3>
+        <ul>
+            <li>Push block to manipulate space and paths</li>
+            <li>Pressure plate & side door system</li>
+            <li>Ice floor causing continuous movement</li>
+            <li>Timed traps with active/inactive states</li>
+            <li>Enemy that chases the player</li>
+            <li>Portal system for instant teleportation (A ↔ B)</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Level design philosophy</h3>
+        <ul>
+            <li>Introduce → Combine → Increase complexity</li>
+            <li>No repetition between levels</li>
+            <li>Teach through gameplay (no tutorial)</li>
+            <li>Clear visual feedback for all interactions</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Difficulty and progression</h3>
+        <ul>
+            <li>Difficulty scales through mechanic combination, not randomness</li>
+            <li>Players are challenged through spatial reasoning and logic</li>
+            <li>Each level builds on previous knowledge</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Visual and tone direction</h3>
+        <p>The game uses a simple and cute visual style to contrast with its logical challenges. 
+        The tone is light and approachable, while the puzzle design remains thoughtful and structured. 
+        Clear visual feedback is emphasized to ensure players always understand the result of their actions.</p>
+    </div>
+`,
     shika: `
         <h2>I KNOW WHAT YOU WANT TO DRINK</h2>
 
