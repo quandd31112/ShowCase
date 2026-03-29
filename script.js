@@ -5,7 +5,7 @@ const highLevelContent = {
 
     <div class="modal-section">
         <h3>High-level concept</h3>
-        <p>CHICK CHIK ranked Top 7 out of 206 in Fun Factor and Top 17 out of 206 in Effort at My First Jam! 2026.</p>
+        <p>CHICK CHIK ranked Top 7 out of 206 in Fun Factor and Top 17 out of 206 in Effort at "My First Jam! 2026".</p>
         <p>CHICK CHICK is a grid-based puzzle game where players control a small chick on a journey to find its mother. 
         The game focuses on learning through interaction, where players understand mechanics naturally by playing instead of following tutorials.</p>
 
