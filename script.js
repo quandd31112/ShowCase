@@ -1,5 +1,67 @@
 // High-level GDD content for each game
 const highLevelContent = {
+    joyeuse: `
+    <h2>JOYEUSE</h2>
+
+    <div class="modal-section">
+        <h3>High-level concept</h3>
+        <p>JOYEUSE is a 2D cozy fantasy RPG / light auto-combat game where players become a young human leaving the western village of Joyeuse to prove that strength comes from adaptation, not race or bloodline.</p>
+
+        <p>The player chooses a starting class, travels through a linear world map, challenges cute tribes with distinct combat identities, collects gear and souls, opens skill tree nodes, and eventually faces the VOID EMPEROR on the path toward becoming the All-Round Warrior.</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core loop</h3>
+        <ul>
+            <li>Create or load a save, enter a name, and choose one of four classes</li>
+            <li>Start at BASE to recover HP, manage inventory, shop, soul, skill tree, achievements, and map</li>
+            <li>Select a map area, review enemy / loot preview, and travel when unlock conditions are met</li>
+            <li>Let auto-combat run by cadence while intervening with Timing Strike QTE and quick consumables</li>
+            <li>Earn EXP, Gold, loot, and soul progress after each enemy</li>
+            <li>Choose level-up upgrades, equip better items, open skill nodes, socket souls, and unlock the next area</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core systems</h3>
+        <ul>
+            <li>Four class identities: Ranger, Tanker, Warrior, and Assassin</li>
+            <li>Auto-combat cadence driven by SPD, accuracy, dodge, crit, double attack, armor, penetration, and status effects</li>
+            <li>Timing Strike QTE with Good / Perfect stun rewards</li>
+            <li>Loot and equipment system with rarity, set bonuses, weapon effects, consumables, and materials</li>
+            <li>Skill tree built on a 5x5 node grid with SP and Gold costs</li>
+            <li>Soul socket system that turns repeated enemy mastery into build customization</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>World progression</h3>
+        <p>The campaign moves from BASE through 19 map points across seven biomes. Each region introduces a tribe, a combat lesson, its own loot identity, story panels, and a boss milestone.</p>
+        <ul>
+            <li>Cloverbell Meadow: Piglet tribe, defense and straightforward attacks</li>
+            <li>Whisperleaf Woods: Pup tribe, speed, pack behavior, timing, and protection</li>
+            <li>Lilybog Marsh: Frog tribe, rhythm, poison, and balance</li>
+            <li>Bubbletide Coast: Sea tribe, wave-like attack patterns and blind effects</li>
+            <li>Snowcap Peaks: Snow tribe, stamina, armor, cold, and stun pressure</li>
+            <li>Emberglow Lands: Flame tribe, burn, damage spikes, and resource pressure</li>
+            <li>THE VOID: final test of build knowledge, resilience, and adaptation</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Design pillars</h3>
+        <ul>
+            <li>Easy to enter combat, deep enough to optimize builds</li>
+            <li>Linear journey with clear biome milestones and boss checks</li>
+            <li>Continuous progression through kills, EXP, Gold, loot, upgrades, skill points, and souls</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Visual and tone direction</h3>
+        <p>The visual direction is 2D cozy fantasy with cute characters, readable silhouettes, bright biome palettes, clear RPG UI panels, and distinct rarity colors. The tone keeps battles friendly and storybook-like: enemies are rivals and teachers, not villains, and victory represents growth through learning.</p>
+    </div>
+`,
     chick: `
     <h2>CHICK CHICK</h2>
 
