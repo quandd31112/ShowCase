@@ -1,5 +1,103 @@
 // High-level GDD content for each game
 const highLevelContent = {
+    wheeloffate: `
+    <h2>WHEEL OF FATE</h2>
+
+    <div class="modal-section">
+        <h3>High-level concept</h3>
+        <p>Wheel of Fate is a dice-driven roguelite board RPG where players roll around a 12-tile wheel. Each tile is an encounter such as enemy, shop, gold, or mystery buff.</p>
+
+        <p>The unique hook is that the wheel evolves from the player's own actions. Tiles level up after being resolved, so rewards become more valuable while dangerous tiles become more threatening.</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core loop</h3>
+        <ul>
+            <li>Roll a die or use Controlled Roll if a charge is available</li>
+            <li>Move the token around the wheel by the rolled number</li>
+            <li>Open the encounter panel for the landed tile</li>
+            <li>Resolve combat, shop, gold, or mystery buff</li>
+            <li>Level up the tile after the panel closes</li>
+            <li>Continue rolling while the wheel becomes richer and more dangerous</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Design pillars</h3>
+        <ul>
+            <li>Roll tension: every roll should feel exciting and risky</li>
+            <li>Self-made danger: farmed tiles evolve into bigger future threats</li>
+            <li>Readable choices through shop, one-of-three buffs, controlled roll, and milestones</li>
+            <li>Fast feedback for combat, rewards, tile level-up, and wheel shuffle</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core systems</h3>
+        <ul>
+            <li>12-tile wheel with enemy, shop, gold, and mystery buff nodes</li>
+            <li>Tile-level progression after each encounter</li>
+            <li>Player stats including HP, Max HP, ATK, Shield, Speed, Gold, and Controlled Roll charges</li>
+            <li>Fate-control system to guarantee shop/gold pacing and early wheel coverage</li>
+            <li>Milestone shuffle when the wheel reaches level thresholds</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Visual and tone direction</h3>
+        <p>The tone is dark-fantasy arcade with clear, fast-reading UI. The wheel, dice, encounter panels, health bars, reward cards, damage popups, and shuffle animations should be readable in one or two seconds.</p>
+    </div>
+`,
+    slapabot: `
+    <h2>SLAPABOT</h2>
+
+    <div class="modal-section">
+        <h3>High-level concept</h3>
+        <p>SLAPABOT is a 2-lane arcade reaction runner where players control a robot running forward and survive by reading enemy patterns quickly. Each threat asks for a clear response: slash, block, switch lane, or activate a weapon skill.</p>
+
+        <p>The core fantasy is simple to learn but tense to master: one-look readability, fast reaction feedback, and short runs that make players immediately understand what went wrong and want to retry.</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core loop</h3>
+        <ul>
+            <li>Press Play from the idle/main menu</li>
+            <li>Camera transitions into gameplay and enemy patterns begin spawning</li>
+            <li>Read enemy type and lane position</li>
+            <li>Slash breakable enemies, block blockable enemies, and dodge unbreakable threats</li>
+            <li>Collect Energinum, build combo, and charge weapon energy</li>
+            <li>Use weapon skill when energy is full</li>
+            <li>React to rising speed, denser patterns, and power-up cubes</li>
+            <li>Survive as long as possible to push score and mastery</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Design pillars</h3>
+        <ul>
+            <li>One-look readability: enemy type must instantly communicate the needed action</li>
+            <li>Fast reaction fantasy with satisfying hit, block, VFX, camera shake, and SFX feedback</li>
+            <li>Short-run mastery where failure is quick, readable, and retry-friendly</li>
+            <li>Light meta progression through weapons, gacha, Energinum, and power-ups</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core systems</h3>
+        <ul>
+            <li>Two-lane movement and lane switching</li>
+            <li>Enemy pattern spawning from data</li>
+            <li>Slash, block, dodge, and skill inputs</li>
+            <li>Energy, combo, score, and Energinum collection</li>
+            <li>Weapon manager, power-up cube, and end-run flow</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Visual and audio direction</h3>
+        <p>The game should use strong silhouettes, readable lane composition, punchy arcade VFX, clear enemy telegraphs, and responsive audio for hits, blocks, skills, pickups, and failure moments.</p>
+    </div>
+`,
     joyeuse: `
     <h2>JOYEUSE</h2>
 

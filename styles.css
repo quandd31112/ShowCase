@@ -23,12 +23,15 @@
 }
 
 html {
+    background: #0b141f;
+    overscroll-behavior-y: none;
     scroll-behavior: smooth;
 }
 
 body {
     min-height: 100vh;
     overflow-x: hidden;
+    overscroll-behavior-y: none;
     background:
         radial-gradient(circle at 20% 0%, rgba(102, 192, 244, 0.18), transparent 34%),
         linear-gradient(180deg, #1b2838 0%, #0b141f 48%, #08111b 100%);
