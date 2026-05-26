@@ -292,6 +292,19 @@ a {
     transition: transform 0.3s ease;
 }
 
+.tower-cover {
+    background:
+        radial-gradient(circle at 50% 45%, rgba(102, 192, 244, 0.22), transparent 36%),
+        linear-gradient(135deg, #0d1b2a, #162c3f 54%, #07121d);
+}
+
+.tower-cover img {
+    width: 62%;
+    height: 82%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.34));
+}
+
 .game-card[data-game="joyeuse"] .game-cover img {
     object-position: center;
 }

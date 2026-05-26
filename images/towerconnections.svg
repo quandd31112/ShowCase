@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Tower Connections cover</title>
+  <desc id="desc">A stylized tower defense board with glowing linked towers and enemy paths.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102034"/>
+      <stop offset="0.52" stop-color="#162c3f"/>
+      <stop offset="1" stop-color="#07121d"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f8d85a"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#66c0f4" stroke-width="2">
+    <path d="M120 170H1480M120 310H1480M120 450H1480M120 590H1480M120 730H1480"/>
+    <path d="M230 90V810M430 90V810M630 90V810M830 90V810M1030 90V810M1230 90V810M1430 90V810"/>
+  </g>
+  <path d="M125 575 C300 575 300 315 475 315 H690 C840 315 825 650 980 650 H1220 C1360 650 1370 420 1490 420" fill="none" stroke="#1a1a1a" stroke-width="118" stroke-linecap="round" stroke-linejoin="round" opacity="0.48"/>
+  <path d="M125 575 C300 575 300 315 475 315 H690 C840 315 825 650 980 650 H1220 C1360 650 1370 420 1490 420" fill="none" stroke="url(#road)" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" stroke-width="12" stroke-linecap="round" filter="url(#glow)">
+    <path d="M360 205 620 470 840 210 1095 500 1305 275" stroke="#66c0f4"/>
+    <path d="M360 205 840 210 620 470 1095 500 1305 275" stroke="#acd532" opacity="0.74"/>
+    <path d="M620 470 760 695 1095 500" stroke="#ffce54" opacity="0.86"/>
+  </g>
+  <g filter="url(#glow)">
+    <g transform="translate(360 205)">
+      <circle r="54" fill="#1a9fff"/>
+      <path d="M-24 24h48V-12L0-34-24-12z" fill="#07121d"/>
+    </g>
+    <g transform="translate(620 470)">
+      <circle r="54" fill="#acd532"/>
+      <path d="M-24 24h48V-12L0-34-24-12z" fill="#07121d"/>
+    </g>
+    <g transform="translate(840 210)">
+      <circle r="54" fill="#ffce54"/>
+      <path d="M-24 24h48V-12L0-34-24-12z" fill="#07121d"/>
+    </g>
+    <g transform="translate(1095 500)">
+      <circle r="54" fill="#fd6f53"/>
+      <path d="M-24 24h48V-12L0-34-24-12z" fill="#07121d"/>
+    </g>
+    <g transform="translate(1305 275)">
+      <circle r="54" fill="#8b7cff"/>
+      <path d="M-24 24h48V-12L0-34-24-12z" fill="#07121d"/>
+    </g>
+  </g>
+  <g fill="#0b141f" opacity="0.86">
+    <circle cx="560" cy="315" r="30"/>
+    <circle cx="1015" cy="650" r="30"/>
+    <circle cx="1365" cy="430" r="30"/>
+  </g>
+  <text x="86" y="782" fill="#dfe7ef" font-family="Inter, Arial, sans-serif" font-size="96" font-weight="800" letter-spacing="0">TOWER</text>
+  <text x="86" y="855" fill="#66c0f4" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="800" letter-spacing="0">CONNECTIONS</text>
+  <text x="1170" y="828" fill="#acd532" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800" letter-spacing="4">NEXUS DEFENSE</text>
+</svg>

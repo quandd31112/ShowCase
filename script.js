@@ -336,6 +336,56 @@ const highLevelContent = {
         Environments include desert worlds, acid planets, ocean planets and death zones, each with unique 
         hazards and enemy behaviors. The tone combines survival tension with explosive power fantasy combat.</p>
     </div>
+`,
+    towerconnections: `
+    <h2>TOWER CONNECTIONS</h2>
+
+    <div class="modal-section">
+        <h3>High-level concept</h3>
+        <p>Tower Connections is a 2D tower defense roguelite built around a Nexus network. Players do not only place towers to shoot enemies; they create energy links between towers, and enemies are affected when they cross those links.</p>
+
+        <p>The core strategy comes from tower position, tower color, and link coverage. Players win by arranging a graph of towers so the energy lines cut through the enemy road as often and as clearly as possible.</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core loop</h3>
+        <ul>
+            <li>Start a fresh run from the main menu</li>
+            <li>Receive an opening hand with a Damage tower and one random tower</li>
+            <li>Drag tower cards onto valid slots to create the first connection</li>
+            <li>Watch enemies travel along a rounded zig-zag lane</li>
+            <li>Use tower links to damage, slow, poison, or stun enemies as they cross</li>
+            <li>Earn points from kills and choose one of three random rewards</li>
+            <li>Draft new towers, tower buffs, or temporary enemy debuffs</li>
+            <li>Keep optimizing the network before enemies reach the core three times</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Design pillars</h3>
+        <ul>
+            <li>Spatial synergy over raw tower count</li>
+            <li>Fast onboarding through simple drag-and-drop placement</li>
+            <li>Readable chaos with bright links, clear enemies, and strong feedback</li>
+            <li>Light roguelite drafting through random reward choices</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core systems</h3>
+        <ul>
+            <li>Automatic full-map tower linking based on placed towers</li>
+            <li>Color-based link effects such as damage, slow, poison, and stun</li>
+            <li>Placement slots that appear only while dragging to reduce clutter</li>
+            <li>Enemy lane, life-loss, wave pressure, and reward milestone systems</li>
+            <li>Data-driven reward and balance direction for future tuning</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Visual and audio direction</h3>
+        <p>The prototype direction is bright arcade defense: clean board readability, large hand-drawn sprites, rounded yellow-white roads, colorful tower cards, and vivid link colors. Audio hooks reinforce placement, linking, rewards, hits, and core damage.</p>
+    </div>
 `
 };
 
