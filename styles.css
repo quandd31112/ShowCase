@@ -1,19 +1,19 @@
 :root {
-    --bg: #f5fbff;
-    --surface: #ffffff;
-    --surface-soft: #f9fcff;
-    --ink: #172033;
-    --ink-soft: #344256;
-    --muted: #64748b;
-    --line: #dce8ef;
-    --line-strong: #c6d8e2;
-    --teal: #0097a7;
-    --blue: #3267d6;
-    --coral: #ff6b4a;
-    --gold: #f4b740;
-    --mint: #35b783;
-    --shadow: 0 18px 42px rgba(23, 32, 51, 0.12);
-    --shadow-soft: 0 10px 28px rgba(23, 32, 51, 0.08);
+    --bg: #0b141f;
+    --surface: #16202d;
+    --surface-soft: #101a26;
+    --ink: #dfe7ef;
+    --ink-soft: #b8c7d9;
+    --muted: #7d8fa4;
+    --line: rgba(103, 140, 174, 0.22);
+    --line-strong: rgba(133, 172, 204, 0.34);
+    --teal: #66c0f4;
+    --blue: #1a9fff;
+    --coral: #c7d5e0;
+    --gold: #acd532;
+    --mint: #75b022;
+    --shadow: 0 22px 48px rgba(0, 0, 0, 0.42);
+    --shadow-soft: 0 14px 34px rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -30,7 +30,8 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     background:
-        linear-gradient(180deg, #f5fbff 0%, #fff9f4 46%, #f4fbf8 100%);
+        radial-gradient(circle at 20% 0%, rgba(102, 192, 244, 0.18), transparent 34%),
+        linear-gradient(180deg, #1b2838 0%, #0b141f 48%, #08111b 100%);
     font-family: 'Inter', sans-serif;
     color: var(--ink);
     line-height: 1.5;
@@ -42,10 +43,9 @@ body::before {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-image:
-        linear-gradient(rgba(50, 103, 214, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 151, 167, 0.05) 1px, transparent 1px);
-    background-size: 44px 44px;
+    background:
+        linear-gradient(90deg, rgba(102, 192, 244, 0.07), transparent 24%, rgba(117, 176, 34, 0.05) 72%, transparent),
+        linear-gradient(rgba(0, 0, 0, 0.18), transparent 28%);
 }
 
 a {
@@ -58,7 +58,7 @@ a {
 }
 
 .container {
-    max-width: 1220px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 44px 24px 36px;
 }
@@ -72,25 +72,18 @@ a {
 }
 
 .profile-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 188px;
-    height: 5px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--coral), var(--gold), var(--teal), var(--blue));
+    display: none;
 }
 
 .profile-kicker {
-    display: inline-flex;
+    display: none;
     align-items: center;
     margin-bottom: 14px;
     padding: 7px 12px;
-    border: 1px solid rgba(0, 151, 167, 0.28);
+    border: 1px solid rgba(102, 192, 244, 0.28);
     border-radius: 999px;
-    color: #087984;
-    background: rgba(255, 255, 255, 0.7);
+    color: var(--teal);
+    background: rgba(8, 17, 27, 0.76);
     font-size: 13px;
     font-weight: 700;
 }
@@ -122,7 +115,7 @@ a {
 }
 
 .profile-highlights {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 24px;
@@ -136,15 +129,15 @@ a {
     padding: 7px 12px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(22, 32, 45, 0.82);
     color: var(--ink-soft);
     font-size: 13px;
     font-weight: 600;
-    box-shadow: 0 5px 16px rgba(23, 32, 51, 0.05);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.16);
 }
 
 .profile-highlights i {
-    color: var(--coral);
+    color: var(--teal);
 }
 
 .hero-actions {
@@ -168,7 +161,7 @@ a {
     border: 1px solid var(--line);
     border-left: 5px solid var(--teal);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.78);
+    background: linear-gradient(90deg, rgba(22, 32, 45, 0.9), rgba(16, 26, 38, 0.72));
 }
 
 .philosophy-section::before {
@@ -176,7 +169,7 @@ a {
     position: absolute;
     top: -26px;
     right: 24px;
-    color: rgba(255, 107, 74, 0.13);
+    color: rgba(102, 192, 244, 0.1);
     font-family: Georgia, serif;
     font-size: 150px;
     line-height: 1;
@@ -187,13 +180,13 @@ a {
     align-items: center;
     gap: 10px;
     margin-bottom: 14px;
-    color: #087984;
+    color: var(--teal);
     font-size: 18px;
     font-weight: 800;
 }
 
 .philosophy-title i {
-    color: var(--coral);
+    color: var(--gold);
     font-size: 20px;
 }
 
@@ -235,10 +228,10 @@ a {
 .game-count {
     flex: 0 0 auto;
     padding: 6px 12px;
-    border: 1px solid rgba(255, 107, 74, 0.28);
+    border: 1px solid rgba(172, 213, 50, 0.28);
     border-radius: 999px;
-    background: #fff5ee;
-    color: #be4428;
+    background: rgba(117, 176, 34, 0.16);
+    color: var(--gold);
     font-size: 13px;
     font-weight: 800;
 }
@@ -247,31 +240,30 @@ a {
 .game-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px;
+    gap: 22px;
 }
 
 .game-card {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--surface);
+    border: 1px solid rgba(103, 140, 174, 0.22);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #223246 0%, #111b28 100%);
     box-shadow: var(--shadow-soft);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .game-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(0, 151, 167, 0.45);
+    transform: translateY(-3px);
+    border-color: rgba(102, 192, 244, 0.72);
     box-shadow: var(--shadow);
 }
 
 .game-card[data-game="joyeuse"] {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: minmax(0, 1.14fr) minmax(360px, 0.86fr);
-    min-height: 420px;
+    grid-column: auto;
+    display: flex;
+    min-height: 0;
 }
 
 .game-cover {
@@ -279,17 +271,18 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 222px;
+    aspect-ratio: 16 / 9;
+    height: auto;
     overflow: hidden;
-    border-bottom: 1px solid var(--line);
-    background: #e9f5f7;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
+    background: #0e151f;
 }
 
 .game-card[data-game="joyeuse"] .game-cover {
-    height: 100%;
-    min-height: 420px;
-    border-right: 1px solid var(--line);
-    border-bottom: none;
+    height: auto;
+    min-height: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
 }
 
 .game-cover img {
@@ -300,7 +293,7 @@ a {
 }
 
 .game-card[data-game="joyeuse"] .game-cover img {
-    object-position: center 35%;
+    object-position: center;
 }
 
 .game-card:hover .game-cover img {
@@ -312,18 +305,21 @@ a {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(180deg, transparent 48%, rgba(23, 32, 51, 0.2) 100%);
+    background: linear-gradient(180deg, transparent 52%, rgba(0, 0, 0, 0.42) 100%);
 }
 
 .game-info {
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 24px;
+    padding: 14px 16px 16px;
+    background:
+        linear-gradient(90deg, rgba(22, 32, 45, 0.98), rgba(37, 55, 74, 0.96)),
+        var(--surface);
 }
 
 .game-card[data-game="joyeuse"] .game-info {
-    padding: 32px;
+    padding: 14px 16px 16px;
 }
 
 .game-title-row {
@@ -331,57 +327,61 @@ a {
     align-items: flex-start;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .game-title {
     color: var(--ink);
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 800;
     line-height: 1.16;
 }
 
 .game-card[data-game="joyeuse"] .game-title {
-    font-size: 31px;
+    font-size: 19px;
 }
 
 .game-year {
     flex: 0 0 auto;
     padding: 4px 9px;
-    border: 1px solid rgba(50, 103, 214, 0.18);
-    border-radius: 999px;
-    background: #eef5ff;
-    color: var(--blue);
+    border: 1px solid rgba(102, 192, 244, 0.18);
+    border-radius: 3px;
+    background: rgba(102, 192, 244, 0.11);
+    color: var(--teal);
     font-size: 13px;
     font-weight: 800;
 }
 
 .game-tagline {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     padding-left: 12px;
-    border-left: 3px solid var(--gold);
-    color: #8a5d00;
+    border-left: 3px solid var(--teal);
+    color: #9fb9cc;
     font-size: 14px;
     font-weight: 700;
 }
 
 .game-desc {
     flex: 1;
-    margin-bottom: 20px;
-    color: var(--muted);
+    margin-bottom: 14px;
+    color: var(--ink-soft);
     font-size: 14px;
-    line-height: 1.65;
+    line-height: 1.55;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
 .game-card[data-game="joyeuse"] .game-desc {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .game-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .game-meta span {
@@ -390,38 +390,40 @@ a {
     gap: 6px;
     min-height: 28px;
     padding: 5px 10px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: var(--surface-soft);
-    color: var(--ink-soft);
+    border: 1px solid rgba(102, 192, 244, 0.16);
+    border-radius: 3px;
+    background: rgba(8, 17, 27, 0.44);
+    color: #a9bfd1;
     font-size: 12px;
     font-weight: 700;
 }
 
 .game-meta i {
-    color: var(--teal);
+    color: var(--gold);
     font-size: 12px;
 }
 
 .btn-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(103, 140, 174, 0.18);
 }
 
 .btn {
     display: inline-flex;
-    flex: 1 1 150px;
+    flex: 1 1 130px;
     align-items: center;
     justify-content: center;
     gap: 7px;
-    min-height: 42px;
-    padding: 9px 14px;
+    min-height: 36px;
+    padding: 8px 11px;
     border: 1px solid var(--line-strong);
-    border-radius: 8px;
-    background: #ffffff;
-    color: var(--ink-soft);
+    border-radius: 3px;
+    background: rgba(103, 140, 174, 0.16);
+    color: #d7e4ef;
     font-size: 13px;
     font-weight: 800;
     line-height: 1.2;
@@ -436,23 +438,23 @@ a {
 }
 
 .btn-primary {
-    border-color: #e25739;
-    background: var(--coral);
-    color: #ffffff;
-    box-shadow: 0 10px 24px rgba(255, 107, 74, 0.24);
+    border-color: rgba(172, 213, 50, 0.42);
+    background: linear-gradient(90deg, #75b022, #a4d007);
+    color: #10210b;
+    box-shadow: 0 10px 24px rgba(117, 176, 34, 0.22);
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    border-color: rgba(0, 151, 167, 0.46);
-    background: #f3fbfc;
-    color: #087984;
+    border-color: rgba(102, 192, 244, 0.54);
+    background: rgba(102, 192, 244, 0.2);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
-    border-color: #d94a2c;
-    background: #e95e40;
-    color: #ffffff;
+    border-color: rgba(190, 230, 64, 0.72);
+    background: linear-gradient(90deg, #8bc53f, #b8e63d);
+    color: #0b1708;
 }
 
 .btn:focus-visible,
@@ -471,7 +473,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: rgba(23, 32, 51, 0.46);
+    background: rgba(0, 0, 0, 0.66);
     backdrop-filter: blur(10px);
 }
 
@@ -486,8 +488,8 @@ a {
     overflow-y: auto;
     border: 1px solid var(--line);
     border-radius: 8px;
-    background: #ffffff;
-    box-shadow: 0 34px 70px rgba(23, 32, 51, 0.28);
+    background: #101a26;
+    box-shadow: 0 34px 70px rgba(0, 0, 0, 0.48);
     padding: 38px;
 }
 
@@ -501,7 +503,7 @@ a {
     width: 40px;
     height: 40px;
     border-radius: 999px;
-    background: #f2f7fb;
+    background: #1b2838;
     color: var(--muted);
     font-size: 30px;
     line-height: 1;
@@ -511,8 +513,8 @@ a {
 
 .close-modal:hover {
     transform: rotate(4deg);
-    background: #fff0e9;
-    color: var(--coral);
+    background: rgba(102, 192, 244, 0.16);
+    color: var(--teal);
 }
 
 .modal h2 {
@@ -534,7 +536,7 @@ a {
     align-items: center;
     gap: 8px;
     margin-bottom: 12px;
-    color: #087984;
+    color: var(--teal);
     font-size: 19px;
     font-weight: 800;
 }
@@ -612,7 +614,7 @@ a {
     height: 42px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: #ffffff;
+    background: #16202d;
     color: var(--ink-soft);
     font-size: 19px;
     text-decoration: none;
@@ -623,7 +625,7 @@ a {
     transform: translateY(-2px);
     border-color: rgba(0, 151, 167, 0.46);
     color: var(--teal);
-    box-shadow: 0 8px 20px rgba(23, 32, 51, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
 }
 
 /* Responsive */
