@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">KHU VUON MUA HE concept cover</title>
+  <desc id="desc">A stylized 2D tilted top-down summer backyard with a child, grass, stones, fireflies, and a treehouse.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6cf75"/>
+      <stop offset="0.48" stop-color="#70b77e"/>
+      <stop offset="1" stop-color="#153f49"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="22%" r="44%">
+      <stop offset="0" stop-color="#fff2a8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff2a8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="540" fill="#102b32"/>
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <rect width="960" height="540" fill="url(#glow)"/>
+
+  <path d="M0 328 C158 256 293 310 433 256 C608 190 765 206 960 146 L960 540 L0 540 Z" fill="#214f38"/>
+  <path d="M0 396 C180 330 320 368 485 310 C650 252 785 270 960 218 L960 540 L0 540 Z" fill="#123b35"/>
+  <path d="M-40 512 C150 390 332 406 492 346 C640 292 772 302 1012 236 L1012 580 L-40 580 Z" fill="#0e2a29"/>
+
+  <g opacity="0.52">
+    <path d="M148 386 C246 332 368 330 470 300" fill="none" stroke="#88d18a" stroke-width="10" stroke-linecap="round"/>
+    <path d="M208 456 C342 378 485 378 650 318" fill="none" stroke="#70bd77" stroke-width="8" stroke-linecap="round"/>
+    <path d="M48 470 C122 420 203 402 286 386" fill="none" stroke="#a5de87" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(668 88)">
+    <path d="M52 78 L156 46 L240 96 L205 184 L89 196 L28 132 Z" fill="#244b35"/>
+    <path d="M86 92 L158 70 L214 104 L190 158 L105 166 L62 124 Z" fill="#8a5a2d"/>
+    <path d="M92 106 L156 86 L202 112 L184 148 L112 154 L76 124 Z" fill="#c07b3c"/>
+    <rect x="124" y="114" width="38" height="34" rx="4" fill="#17333a"/>
+    <path d="M62 190 L34 282" stroke="#5d3d25" stroke-width="12" stroke-linecap="round"/>
+    <path d="M194 182 L225 284" stroke="#5d3d25" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(118 188)">
+    <ellipse cx="126" cy="182" rx="88" ry="34" fill="#061c20" opacity="0.38" filter="url(#soft)"/>
+    <path d="M87 138 C56 87 70 32 129 18 C196 4 241 63 213 132 C189 190 122 194 87 138 Z" fill="#215838"/>
+    <path d="M118 144 C104 105 118 70 153 54" fill="none" stroke="#72b763" stroke-width="12" stroke-linecap="round"/>
+    <rect x="130" y="136" width="32" height="112" rx="14" fill="#6b4527"/>
+  </g>
+
+  <g transform="translate(452 304)">
+    <ellipse cx="37" cy="74" rx="40" ry="14" fill="#061c20" opacity="0.34"/>
+    <circle cx="38" cy="34" r="24" fill="#f0c38e"/>
+    <path d="M18 54 C28 42 49 41 60 54 L66 94 C48 108 26 106 10 94 Z" fill="#3f8bd7"/>
+    <path d="M16 61 L-2 84" stroke="#f0c38e" stroke-width="9" stroke-linecap="round"/>
+    <path d="M60 61 L82 82" stroke="#f0c38e" stroke-width="9" stroke-linecap="round"/>
+    <path d="M27 104 L17 133" stroke="#2f5e83" stroke-width="10" stroke-linecap="round"/>
+    <path d="M51 104 L65 132" stroke="#2f5e83" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <g fill="#b8c1a7" opacity="0.95">
+    <ellipse cx="378" cy="402" rx="42" ry="18" transform="rotate(-12 378 402)"/>
+    <ellipse cx="642" cy="374" rx="32" ry="15" transform="rotate(18 642 374)"/>
+    <ellipse cx="732" cy="432" rx="52" ry="19" transform="rotate(-8 732 432)"/>
+  </g>
+
+  <g fill="#f9f0a1">
+    <circle cx="624" cy="214" r="5"/>
+    <circle cx="684" cy="242" r="4"/>
+    <circle cx="744" cy="202" r="5"/>
+    <circle cx="812" cy="254" r="4"/>
+    <circle cx="582" cy="278" r="3"/>
+  </g>
+  <g fill="#f9f0a1" opacity="0.38" filter="url(#soft)">
+    <circle cx="624" cy="214" r="14"/>
+    <circle cx="684" cy="242" r="12"/>
+    <circle cx="744" cy="202" r="15"/>
+    <circle cx="812" cy="254" r="12"/>
+    <circle cx="582" cy="278" r="10"/>
+  </g>
+
+  <text x="56" y="82" fill="#f4f8dc" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800">KHU VUON</text>
+  <text x="56" y="136" fill="#f4f8dc" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800">MUA HE</text>
+  <text x="58" y="174" fill="#d8e8bb" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">2D tilted backyard exploration</text>
+</svg>

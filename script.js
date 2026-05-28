@@ -1,5 +1,59 @@
 // High-level GDD content for each game
 const highLevelContent = {
+    khuvuonmuahe: `
+    <h2>KHU VƯỜN MÙA HÈ</h2>
+
+    <div class="modal-section">
+        <h3>High-level concept</h3>
+        <p>KHU VƯỜN MÙA HÈ is a 2D tilted top-down exploration game about a child discovering the backyard on a summer afternoon. The camera and movement feel are inspired by Among Us: smooth 8-direction movement, readable map spaces, and an orthographic camera that follows the player gently.</p>
+
+        <p>The core fantasy is turning a familiar backyard into a mysterious childhood world. Grass, stones, tree roots, fireflies, insects, old toys, and soft night lighting become small discoveries that reward curiosity more than score chasing.</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core loop</h3>
+        <ul>
+            <li>Move freely through the backyard and notice unusual sounds, movement, light, or soft ground</li>
+            <li>Interact with the environment: flip stones, part grass, climb, dig, crawl, or shine a flashlight</li>
+            <li>Observe how creatures react instead of collecting them like static items</li>
+            <li>Discover tiny wonder moments such as hidden tunnels, firefly gatherings, rare post-rain creatures, or an abandoned treehouse</li>
+            <li>Unlock new garden areas, tools, creature notes, and childhood memory fragments</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Movement and camera feel</h3>
+        <ul>
+            <li>2D free movement, not grid-based</li>
+            <li>Smooth 8-direction control with slight acceleration and responsive direction changes</li>
+            <li>Orthographic tilted top-down camera similar to Among Us readability</li>
+            <li>Small capsule/circle collider so the player can naturally pass through narrow garden paths</li>
+            <li>Foreground grass, leaves, and branches can create depth, but should fade when blocking the player too much</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Design pillars</h3>
+        <ul>
+            <li>Small interactions, memorable reactions</li>
+            <li>Nature feels alive through creature behavior</li>
+            <li>Wonder comes from observation, not long tutorials</li>
+            <li>Childlike perspective matters more than realistic scale</li>
+            <li>Minimal UI, strong atmosphere, and audio-led discovery</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core systems</h3>
+        <ul>
+            <li>Player2DMovement and CameraFollow2D for the Among Us-like feel</li>
+            <li>InteractionTarget system for stones, grass, roots, tree branches, and dark areas</li>
+            <li>CreatureBehavior states for insects, worms, birds, snakes, and fireflies</li>
+            <li>Time/weather states that change what appears after rain, at sunset, and at night</li>
+            <li>Journal and memory unlocks for creature notes and childhood fragments</li>
+        </ul>
+    </div>
+`,
     wheeloffate: `
     <h2>WHEEL OF FATE</h2>
 
