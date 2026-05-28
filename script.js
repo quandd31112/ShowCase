@@ -1,23 +1,24 @@
 // High-level GDD content for each game
 const highLevelContent = {
     khuvuonmuahe: `
-    <h2>KHU VƯỜN MÙA HÈ</h2>
+    <h2>SUMMER GARDEN</h2>
 
     <div class="modal-section">
         <h3>High-level concept</h3>
-        <p>KHU VƯỜN MÙA HÈ is a 2D tilted top-down exploration game about a child discovering the backyard on a summer afternoon. The camera and movement feel are inspired by Among Us: smooth 8-direction movement, readable map spaces, and an orthographic camera that follows the player gently.</p>
+        <p>Summer Garden is a 2D tilted top-down exploration game set in the back garden of a Mekong Delta home in Vietnam. Around 12:00, right after finishing lunch, a boy runs outside into the hot noon garden. The current prototype focuses on small childhood activities: catching snails, fishing, grilling fish with a ceramic bowl and two bricks, digging worms, feeding a baby bird, catching bugs, racing pill bugs in a Danisa tin, watching ants carry a bug, collecting tadpoles, and chasing strange birds with a flashlight.</p>
 
-        <p>The core fantasy is turning a familiar backyard into a mysterious childhood world. Grass, stones, tree roots, fireflies, insects, old toys, and soft night lighting become small discoveries that reward curiosity more than score chasing.</p>
+        <p>The game is not about combat or score. Each activity becomes a memory fragment: players finish a minigame or vignette, receive an item or story piece, then reveal a four-panel story with Space. When all garden activities are complete, the mother calls the boy inside and the credits roll like the end of a hot noon summer play session.</p>
     </div>
 
     <div class="modal-section">
         <h3>Core loop</h3>
         <ul>
-            <li>Move freely through the backyard and notice unusual sounds, movement, light, or soft ground</li>
-            <li>Interact with the environment: flip stones, part grass, climb, dig, crawl, or shine a flashlight</li>
-            <li>Observe how creatures react instead of collecting them like static items</li>
-            <li>Discover tiny wonder moments such as hidden tunnels, firefly gatherings, rare post-rain creatures, or an abandoned treehouse</li>
-            <li>Unlock new garden areas, tools, creature notes, and childhood memory fragments</li>
+            <li>Move around a Mekong Delta back garden and find interaction points such as rain puddles, a small pond, soft soil, grass clumps, stones, an ant nest, banana/fruit-tree shade, and strange birds on the garden edge</li>
+            <li>Press E or hold E to start the matching activity</li>
+            <li>Complete the minigame or vignette to receive an item or story piece</li>
+            <li>Use items to unlock linked activities: snail to fishing to grilled fish, worm to baby bird, bug to ant nest</li>
+            <li>Reveal each four-panel story with Space after completing an activity</li>
+            <li>Finish the main activity set so the mother calls the boy back inside and credits begin</li>
         </ul>
     </div>
 
@@ -27,30 +28,42 @@ const highLevelContent = {
             <li>2D free movement, not grid-based</li>
             <li>Smooth 8-direction control with slight acceleration and responsive direction changes</li>
             <li>Orthographic tilted top-down camera similar to Among Us readability</li>
-            <li>Small capsule/circle collider so the player can naturally pass through narrow garden paths</li>
+            <li>Small capsule/circle collider so the player can naturally pass through narrow dirt paths, grass edges, and tree shade</li>
             <li>Foreground grass, leaves, and branches can create depth, but should fade when blocking the player too much</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Activity chain</h3>
+        <ul>
+            <li>Catch snails in puddles after rain and use the snail as fishing bait</li>
+            <li>Catch fish at the pond, then grill it through a four-step cooking sequence</li>
+            <li>Dig worms from soft soil and feed a baby bird on a low branch</li>
+            <li>Catch a beetle in rustling grass and place it near an ant nest</li>
+            <li>Flip stones to find pill bugs and run a pill bug race inside a tin box</li>
+            <li>Collect tadpoles in a jar and reveal the memory of raising them into frogs</li>
         </ul>
     </div>
 
     <div class="modal-section">
         <h3>Design pillars</h3>
         <ul>
-            <li>Small interactions, memorable reactions</li>
-            <li>Nature feels alive through creature behavior</li>
-            <li>Wonder comes from observation, not long tutorials</li>
-            <li>Childlike perspective matters more than realistic scale</li>
-            <li>Minimal UI, strong atmosphere, and audio-led discovery</li>
+            <li>Small moments, big feelings</li>
+            <li>Child-made rules and Mekong Delta garden play instead of formal quests</li>
+            <li>Interaction first, story after</li>
+            <li>Completed activities lock once their story key is earned</li>
+            <li>The ending is emotional closure: the mother calls from inside the house</li>
         </ul>
     </div>
 
     <div class="modal-section">
         <h3>Core systems</h3>
         <ul>
-            <li>Player2DMovement and CameraFollow2D for the Among Us-like feel</li>
-            <li>InteractionTarget system for stones, grass, roots, tree branches, and dark areas</li>
-            <li>CreatureBehavior states for insects, worms, birds, snakes, and fireflies</li>
-            <li>Time/weather states that change what appears after rain, at sunset, and at night</li>
-            <li>Journal and memory unlocks for creature notes and childhood fragments</li>
+            <li>Interaction targets with prompts, hold times, rewards, minigame names, and completion locks</li>
+            <li>Inventory prerequisites for linked activities such as Snail, Fish, Worm, Beetle, PillBug, and TadpoleJar</li>
+            <li>Minigame panels and storybook panels that lock player movement while open</li>
+            <li>StoryProgress keys for catch-bug, pillbug-race, dig-worm, feed-bird, snail, tadpole, fishing, grill-fish, and ant-nest</li>
+            <li>Strange bird flashlight system where birds multiply over time unless chased away with Right Mouse</li>
         </ul>
     </div>
 `,
