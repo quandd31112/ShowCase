@@ -1,24 +1,25 @@
 // High-level GDD content for each game
 const highLevelContent = {
-    khuvuonmuahe: `
-    <h2>SUMMER GARDEN</h2>
+    grandmasbackyardgarden: `
+    <h2>GRANDMA'S BACKYARD GARDEN</h2>
 
     <div class="modal-section">
         <h3>High-level concept</h3>
-        <p>Summer Garden is a 2D tilted top-down exploration game set in the back garden of a Mekong Delta home in Vietnam. Around 12:00, right after finishing lunch, a boy runs outside into the hot noon garden. The current prototype focuses on small childhood activities: catching snails, fishing, grilling fish with a ceramic bowl and two bricks, digging worms, feeding a baby bird, catching bugs, racing pill bugs in a Danisa tin, watching ants carry a bug, collecting tadpoles, and chasing strange birds with a flashlight.</p>
+        <p>Grandma's Backyard Garden is a 2D top-down exploration and narrative minigame collection set around the back porch and garden of a Mekong Delta home in Vietnam. A boy has just been fed lunch by his grandma, then runs outside into a hot summer noon to play in the garden.</p>
 
-        <p>The game is not about combat or score. Each activity becomes a memory fragment: players finish a minigame or vignette, receive an item or story piece, then reveal a four-panel story with Space. When all garden activities are complete, the mother calls the boy inside and the credits roll like the end of a hot noon summer play session.</p>
+        <p>The game is not about combat, score, or winning. Each small activity becomes a childhood memory: players finish a minigame or vignette, receive an item or story piece, then reveal a four-panel story with Space. When all major garden activities are complete, grandma calls the boy back inside; the player interacts with the home entrance, the screen fades to black, and credits roll like the end of a short film.</p>
     </div>
 
     <div class="modal-section">
         <h3>Core loop</h3>
         <ul>
-            <li>Move around a Mekong Delta back garden and find interaction points such as rain puddles, a small pond, soft soil, grass clumps, stones, an ant nest, banana/fruit-tree shade, and strange birds on the garden edge</li>
-            <li>Press E or hold E to start the matching activity</li>
-            <li>Complete the minigame or vignette to receive an item or story piece</li>
-            <li>Use items to unlock linked activities: snail to fishing to grilled fish, worm to baby bird, bug to ant nest</li>
-            <li>Reveal each four-panel story with Space after completing an activity</li>
-            <li>Finish the main activity set so the mother calls the boy back inside and credits begin</li>
+            <li>Move through the garden with WASD or Arrow keys</li>
+            <li>Look for an E icon on interactive objects; the baby-bird tree and home entrance show the E icon above the player</li>
+            <li>Press E or hold E to start an activity</li>
+            <li>Play the minigame or vignette while movement is locked by the Canvas panel</li>
+            <li>Receive an item or story piece, then reveal the four story frames with Space</li>
+            <li>Completed activities lock and can change to an interacted sprite state</li>
+            <li>After all main activities are complete, return to the home entrance for the ending and credits</li>
         </ul>
     </div>
 
@@ -26,44 +27,46 @@ const highLevelContent = {
         <h3>Movement and camera feel</h3>
         <ul>
             <li>2D free movement, not grid-based</li>
-            <li>Smooth 8-direction control with slight acceleration and responsive direction changes</li>
-            <li>Orthographic tilted top-down camera similar to Among Us readability</li>
-            <li>Small capsule/circle collider so the player can naturally pass through narrow dirt paths, grass edges, and tree shade</li>
-            <li>Foreground grass, leaves, and branches can create depth, but should fade when blocking the player too much</li>
+            <li>Player stays inside the yard/garden area while solid objects such as the pond, stove, house, tree roots, stones, and large bushes block movement</li>
+            <li>Interaction uses trigger range on the actual GardenInteractable object, not detached trigger objects</li>
+            <li>Camera follows the player but clamps to the map bounds so green outside-background or missing asset areas never show</li>
+            <li>MinigameInputLock freezes movement whenever a minigame or storybook panel is open</li>
         </ul>
     </div>
 
     <div class="modal-section">
         <h3>Activity chain</h3>
         <ul>
-            <li>Catch snails in puddles after rain and use the snail as fishing bait</li>
-            <li>Catch fish at the pond, then grill it through a four-step cooking sequence</li>
+            <li>Catch a beetle in rustling grass, then use it at the ant nest</li>
+            <li>Flip a brick or flat stone to find a PillBug, then race it in a Danisa tin</li>
             <li>Dig worms from soft soil and feed a baby bird on a low branch</li>
-            <li>Catch a beetle in rustling grass and place it near an ant nest</li>
-            <li>Flip stones to find pill bugs and run a pill bug race inside a tin box</li>
-            <li>Collect tadpoles in a jar and reveal the memory of raising them into frogs</li>
+            <li>Catch snails in rain puddles and use them as fishing bait</li>
+            <li>Catch fish at the pond, then release the fish after the memory beat</li>
+            <li>Collect tadpoles and bring them to a glass jar to unlock the tadpole story</li>
+            <li>Take a candle to the brick stove to create the fire plume story</li>
+            <li>Shine the flashlight on strange birds around the yard edge to keep the environment alive</li>
         </ul>
     </div>
 
     <div class="modal-section">
         <h3>Design pillars</h3>
         <ul>
-            <li>Small moments, big feelings</li>
-            <li>Child-made rules and Mekong Delta garden play instead of formal quests</li>
-            <li>Interaction first, story after</li>
-            <li>Completed activities lock once their story key is earned</li>
-            <li>The ending is emotional closure: the mother calls from inside the house</li>
+            <li>Childhood through small objects: each bug, puddle, brick, and stove should carry a specific feeling</li>
+            <li>Child-made play: minigames are simple, but follow the logic of kids inventing games outside</li>
+            <li>Environment interaction first, story after</li>
+            <li>Each main activity is completed only once after its story piece is earned</li>
+            <li>The ending is emotional closure: grandma calls from inside the house</li>
         </ul>
     </div>
 
     <div class="modal-section">
         <h3>Core systems</h3>
         <ul>
-            <li>Interaction targets with prompts, hold times, rewards, minigame names, and completion locks</li>
-            <li>Inventory prerequisites for linked activities such as Snail, Fish, Worm, Beetle, PillBug, and TadpoleJar</li>
-            <li>Minigame panels and storybook panels that lock player movement while open</li>
-            <li>StoryProgress keys for catch-bug, pillbug-race, dig-worm, feed-bird, snail, tadpole, fishing, grill-fish, and ant-nest</li>
-            <li>Strange bird flashlight system where birds multiply over time unless chased away with Right Mouse</li>
+            <li>GardenInteractable component placed directly on each interactive object</li>
+            <li>Inventory prerequisites for PillBug, Worm, Beetle, Snail, TadpoleJar, candle, and StoryPiece progression</li>
+            <li>Canvas panels scaled to 1920x1080 with TextMeshProUGUI and a close button in the upper-left corner</li>
+            <li>StoryProgress completion lock; failed minigames do not complete story keys and can be retried</li>
+            <li>Ending unlock through the home entrance only after the required 10 story keys are complete</li>
         </ul>
     </div>
 `,
