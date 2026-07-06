@@ -246,6 +246,45 @@ a {
     gap: 22px;
 }
 
+.featured-section-bar .section-title i {
+    color: var(--gold);
+}
+
+.featured-grid {
+    grid-template-columns: 1fr;
+}
+
+.featured-grid .game-card {
+    display: grid;
+    grid-template-columns: minmax(320px, 44%) 1fr;
+}
+
+.featured-grid .game-cover,
+.featured-grid .game-card[data-game="joyeuse"] .game-cover {
+    height: 100%;
+    min-height: 330px;
+    aspect-ratio: auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.55);
+    border-bottom: 0;
+}
+
+.featured-grid .game-info,
+.featured-grid .game-card[data-game="joyeuse"] .game-info {
+    padding: 26px 28px;
+}
+
+.featured-grid .game-desc {
+    display: block;
+    overflow: visible;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.featured-grid .game-title,
+.featured-grid .game-card[data-game="joyeuse"] .game-title {
+    font-size: 24px;
+}
+
 .game-card {
     display: flex;
     flex-direction: column;
@@ -646,6 +685,19 @@ a {
 
 /* Responsive */
 @media (max-width: 980px) {
+    .featured-grid .game-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-grid .game-cover,
+    .featured-grid .game-card[data-game="joyeuse"] .game-cover {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-right: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.55);
+    }
+
     .profile-header h1 {
         font-size: 44px;
         line-height: 1.1;
