@@ -505,6 +505,43 @@ const highLevelContent = {
         hazards and enemy behaviors. The tone combines survival tension with explosive power fantasy combat.</p>
     </div>
 `,
+    waterpuzzle: `
+    <h2>WATER PUZZLE</h2>
+
+    <div class="modal-section">
+        <h3>High-level concept</h3>
+        <p>Water Puzzle is a playable puzzle prototype created for VNG's Prompt to Play event. The game centers on manipulating water-flow logic through compact puzzle layouts, where each action should be readable and each level teaches its rule through direct experimentation.</p>
+
+        <p>The design direction emphasizes quick understanding, clean cause-and-effect feedback, and puzzle satisfaction built from simple rules combining into more interesting solutions.</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Core loop</h3>
+        <ul>
+            <li>Observe the puzzle layout and water path</li>
+            <li>Identify blockers, routes, and interactable elements</li>
+            <li>Change the state of the puzzle to guide the water correctly</li>
+            <li>Read immediate visual feedback from the water movement</li>
+            <li>Iterate until the target condition is solved</li>
+            <li>Move to the next puzzle with a slightly expanded challenge</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Design pillars</h3>
+        <ul>
+            <li>Readable water logic: players should understand why water moves or stops</li>
+            <li>Learn by doing: mechanics are introduced through interaction, not heavy text</li>
+            <li>Compact challenge: each level should focus on one clear puzzle idea</li>
+            <li>Fast retry and experimentation-friendly pacing</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Event context</h3>
+        <p>Event: Prompt to Play by VNG.</p>
+    </div>
+`,
     towerconnections: `
     <h2>TOWER CONNECTIONS</h2>
 

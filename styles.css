@@ -347,6 +347,13 @@ a {
     filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.34));
 }
 
+.water-cover {
+    background:
+        radial-gradient(circle at 28% 26%, rgba(172, 213, 50, 0.24), transparent 26%),
+        radial-gradient(circle at 70% 60%, rgba(102, 192, 244, 0.3), transparent 34%),
+        linear-gradient(135deg, #071b2d 0%, #0f4d67 48%, #143259 100%);
+}
+
 .game-card[data-game="joyeuse"] .game-cover img {
     object-position: center;
 }
