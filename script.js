@@ -598,6 +598,9 @@ const highLevelContent = {
 const modal = document.getElementById('gddModal');
 const modalContent = document.getElementById('modalContent');
 const closeBtn = document.querySelector('.close-modal');
+const portfolioNoticeModal = document.getElementById('portfolioNoticeModal');
+const noticeCloseBtn = document.querySelector('.notice-close');
+const noticeConfirmBtn = document.querySelector('.notice-confirm');
 
 document.querySelectorAll('.high-level-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -617,11 +620,29 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
+function openPortfolioNotice() {
+    portfolioNoticeModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePortfolioNotice() {
+    portfolioNoticeModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
 closeBtn.addEventListener('click', closeModal);
+noticeCloseBtn.addEventListener('click', closePortfolioNotice);
+noticeConfirmBtn.addEventListener('click', closePortfolioNotice);
+
+window.addEventListener('DOMContentLoaded', openPortfolioNotice);
 
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         closeModal();
+    }
+
+    if (e.target === portfolioNoticeModal) {
+        closePortfolioNotice();
     }
 });
 
@@ -629,5 +650,9 @@ window.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
         closeModal();
+    }
+
+    if (e.key === 'Escape' && portfolioNoticeModal.classList.contains('active')) {
+        closePortfolioNotice();
     }
 });
