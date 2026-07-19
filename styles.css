@@ -159,7 +159,7 @@ a {
 .philosophy-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 178px;
-    align-items: stretch;
+    align-items: center;
     gap: 22px;
     margin-bottom: 46px;
 }
@@ -218,7 +218,12 @@ a {
 .avatar-card {
     position: relative;
     overflow: hidden;
-    min-height: 178px;
+    width: 178px;
+    height: 178px;
+    max-width: 178px;
+    max-height: 178px;
+    aspect-ratio: 1;
+    justify-self: end;
     border: 1px solid rgba(102, 192, 244, 0.38);
     border-radius: 22px;
     background:
@@ -737,7 +742,9 @@ a {
     .avatar-card {
         justify-self: center;
         width: min(220px, 68vw);
-        min-height: 220px;
+        height: min(220px, 68vw);
+        max-width: 220px;
+        max-height: 220px;
         aspect-ratio: 1;
     }
 
