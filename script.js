@@ -1,5 +1,29 @@
 // High-level GDD content for each game
 const highLevelContent = {
+    wukongresearch: `
+    <h2>WHY WUKONG CONTINUES TO ATTRACT PLAYERS</h2>
+
+    <div class="modal-section">
+        <h3>Research question</h3>
+        <p>Why do Wukong-inspired characters and premium skins repeatedly attract players across games such as Honor of Kings, Arena of Valor, Mobile Legends, League of Legends, and Black Myth: Wukong?</p>
+    </div>
+
+    <div class="modal-section">
+        <h3>Key findings</h3>
+        <ul>
+            <li><strong>Power fantasy:</strong> Wukong represents exceptional strength, magical versatility, freedom, and the confidence to challenge overwhelming authority.</li>
+            <li><strong>Rebel archetype:</strong> Players connect with a rule-breaking hero who controls his own fate, similar to other popular rebel characters in games and anime.</li>
+            <li><strong>Instant recognition:</strong> The staff, golden headband, tail, and phoenix-feather crown preserve the character's identity across radically different visual styles.</li>
+            <li><strong>Nostalgia:</strong> Familiarity from Journey to the West, television, animation, comics, and earlier games reduces the effort needed to understand and trust the character.</li>
+            <li><strong>Proven market value:</strong> Repeated investment by major studios reinforces Wukong as a commercially safer and already validated character fantasy.</li>
+        </ul>
+    </div>
+
+    <div class="modal-section">
+        <h3>Design takeaway</h3>
+        <p>Wukong's appeal does not come from cultural recognition alone. It comes from the combination of a strong player fantasy, a durable character archetype, unmistakable visual anchors, emotional familiarity, and established commercial confidence.</p>
+    </div>
+`,
     grandmasbackyardgarden: `
     <h2>GRANDMA'S BACKYARD GARDEN</h2>
 
@@ -598,9 +622,6 @@ const highLevelContent = {
 const modal = document.getElementById('gddModal');
 const modalContent = document.getElementById('modalContent');
 const closeBtn = document.querySelector('.close-modal');
-const portfolioNoticeModal = document.getElementById('portfolioNoticeModal');
-const noticeCloseBtn = document.querySelector('.notice-close');
-const noticeConfirmBtn = document.querySelector('.notice-confirm');
 
 document.querySelectorAll('.high-level-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -620,30 +641,13 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-function openPortfolioNotice() {
-    portfolioNoticeModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closePortfolioNotice() {
-    portfolioNoticeModal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
 closeBtn.addEventListener('click', closeModal);
-noticeCloseBtn.addEventListener('click', closePortfolioNotice);
-noticeConfirmBtn.addEventListener('click', closePortfolioNotice);
-
-window.addEventListener('DOMContentLoaded', openPortfolioNotice);
 
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         closeModal();
     }
 
-    if (e.target === portfolioNoticeModal) {
-        closePortfolioNotice();
-    }
 });
 
 // Close on Escape key
@@ -652,7 +656,4 @@ document.addEventListener('keydown', (e) => {
         closeModal();
     }
 
-    if (e.key === 'Escape' && portfolioNoticeModal.classList.contains('active')) {
-        closePortfolioNotice();
-    }
 });
