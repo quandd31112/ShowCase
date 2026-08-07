@@ -759,6 +759,10 @@ a {
         linear-gradient(145deg, rgba(34, 50, 70, .96), rgba(16, 26, 38, .98));
 }
 
+.research-grid .experience-card {
+    grid-column: 1 / -1;
+}
+
 .research-featured h3 { font-size: 21px; }
 .research-featured p { max-width: 760px; color: var(--ink-soft); }
 .research-featured .btn-group { margin-top: 18px; }

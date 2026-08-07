@@ -213,7 +213,7 @@ def set_document_defaults(doc):
 def add_cover(doc):
     p = doc.add_paragraph(style="normal")
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = p.add_run("SHIKASTUDIO")
+    r = p.add_run("ĐẶNG ĐÔNG QUÂN")
     style_run(r, size=12, bold=True, color="1F4D78")
 
     p = doc.add_paragraph(style="normal")
@@ -233,10 +233,10 @@ def add_cover(doc):
         [
             ["Product name", "KHU VƯỜN MÙA HÈ"],
             ["Project version", "Concept GDD"],
-            ["Company", "ShikaStudio"],
+            ["Company", "Independent Game Design"],
             ["Engine", "Unity 2D hoặc engine 2D tương đương"],
             ["Source idea", "Core Gameplay Loop: khám phá khu vườn sau nhà"],
-            ["Người thực hiện", "Shika"],
+            ["Người thực hiện", "Đặng Đông Quân"],
         ],
         [2800, 6560],
     )

@@ -259,12 +259,8 @@ const highLevelContent = {
 
     <div class="modal-section">
         <h3>High-level concept</h3>
-        <p>CHICK CHIK ranked Top 7 out of 206 in Fun Factor and Top 17 out of 206 in Effort at "My First Jam! 2026".</p>
-        <p>CHICK CHICK is a grid-based puzzle game where players control a small chick on a journey to find its mother. 
-        The game focuses on learning through interaction, where players understand mechanics naturally by playing instead of following tutorials.</p>
-
-        <p>The core experience is built around clarity, logic, and progression — each level introduces a new mechanic, 
-        then combines it with previous ones to create more complex and satisfying challenges.</p>
+        <p>CHICK CHICK placed Top 7 / 206 in Fun Factor and Top 17 / 206 in Effort at My First Jam! 2026.</p>
+        <p>A grid-based puzzle game about guiding a chick back to its mother. The level sequence teaches each rule through spatial arrangement, then combines established mechanics to increase reasoning depth without introducing random difficulty.</p>
     </div>
 
     <div class="modal-section">
@@ -296,10 +292,10 @@ const highLevelContent = {
     <div class="modal-section">
         <h3>Level design philosophy</h3>
         <ul>
-            <li>Introduce → Combine → Increase complexity</li>
-            <li>No repetition between levels</li>
-            <li>Teach through gameplay (no tutorial)</li>
-            <li>Clear visual feedback for all interactions</li>
+            <li>10-level learning progression: one readable rule at a time</li>
+            <li>Teach through spatial arrangement rather than excessive tutorial text</li>
+            <li>Combine learned rules only after players have encountered them individually</li>
+            <li>Use clear feedback for every interaction</li>
         </ul>
     </div>
 
@@ -319,7 +315,7 @@ const highLevelContent = {
         Clear visual feedback is emphasized to ensure players always understand the result of their actions.</p>
     </div>
 `,
-    shika: `
+    ikwywtd: `
         <h2>I KNOW WHAT YOU WANT TO DRINK</h2>
 
         <div class="modal-section">
@@ -534,30 +530,29 @@ const highLevelContent = {
 
     <div class="modal-section">
         <h3>High-level concept</h3>
-        <p>Water Puzzle is a playable puzzle prototype created for VNG's Prompt to Play event. The game centers on manipulating water-flow logic through compact puzzle layouts, where each action should be readable and each level teaches its rule through direct experimentation.</p>
+        <p>A mobile-first routing puzzle designed for portrait, one-handed play. Players place and rotate functional blocks before releasing the water, creating a planning challenge built around spatial reasoning, sequencing, and readable cause and effect.</p>
 
-        <p>The design direction emphasizes quick understanding, clean cause-and-effect feedback, and puzzle satisfaction built from simple rules combining into more interesting solutions.</p>
+        <p>Created as a rapid prototype under a 24-hour competition constraint, the system was designed to support scalable level production through reusable rules.</p>
     </div>
 
     <div class="modal-section">
         <h3>Core loop</h3>
         <ul>
-            <li>Observe the puzzle layout and water path</li>
-            <li>Identify blockers, routes, and interactable elements</li>
-            <li>Change the state of the puzzle to guide the water correctly</li>
-            <li>Read immediate visual feedback from the water movement</li>
-            <li>Iterate until the target condition is solved</li>
-            <li>Move to the next puzzle with a slightly expanded challenge</li>
+            <li>Read the layout and target route</li>
+            <li>Place and rotate functional blocks before releasing the water</li>
+            <li>Watch the flow and identify the error or successful path</li>
+            <li>Revise the routing plan and retry</li>
+            <li>Move to a puzzle with expanded planning depth</li>
         </ul>
     </div>
 
     <div class="modal-section">
         <h3>Design pillars</h3>
         <ul>
-            <li>Readable water logic: players should understand why water moves or stops</li>
-            <li>Learn by doing: mechanics are introduced through interaction, not heavy text</li>
-            <li>Compact challenge: each level should focus on one clear puzzle idea</li>
-            <li>Fast retry and experimentation-friendly pacing</li>
+            <li>Placement-and-routing decisions suited to short mobile sessions</li>
+            <li>Difficulty grows through grid size, pipe behavior, and planning depth rather than arbitrary randomness</li>
+            <li>Clear visual feedback makes flow errors understandable</li>
+            <li>Reusable level-design rules support scalable production</li>
         </ul>
     </div>
 
